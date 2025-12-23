@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeStudio | Crack Your Next Tech Interview</title>
+    <meta name="description" content="Master Data Structures, Algorithms, and System Design with CodeStudio. Curated resources, placement bundles, and mentorship for engineering students.">
+    <meta name="theme-color" content="#020617">
+
+    <!-- Google Fonts -->
+    
+    
+    <style type="text/css">@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:500;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:500;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:500;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:500;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Plus Jakarta Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/plus-jakarta-sans/5.0.18/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:300;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:300;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:300;src:url(/cf-fonts/v/space-grotesk/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:400;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:400;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:400;src:url(/cf-fonts/v/space-grotesk/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:500;src:url(/cf-fonts/v/space-grotesk/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:500;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:500;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:600;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:600;src:url(/cf-fonts/v/space-grotesk/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:600;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:700;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:700;src:url(/cf-fonts/v/space-grotesk/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Space Grotesk;font-style:normal;font-weight:700;src:url(/cf-fonts/v/space-grotesk/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['"Space Grotesk"', 'sans-serif'],
+                        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            950: '#020617', // Background
+                            900: '#0f172a', // Surface
+                            800: '#1e293b', // Borders
+                            400: '#22d3ee', // Cyan Accent
+                            500: '#06b6d4', // Cyan Darker
+                        }
+                    },
+                    backgroundImage: {
+                        'glow-gradient': 'radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, rgba(2, 6, 23, 0) 70%)',
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40' stroke='%231e293b' stroke-width='1' fill='none' opacity='0.2'/%3E%3C/svg%3E\")",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #22d3ee; }
+
+        /* Smooth Reveal Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+        }
+        
+        /* Neon Button Glow */
+        .btn-neon {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-neon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .btn-neon:hover::after {
+            left: 100%;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+        }
+    </style>
+
+<style>
+  /* Remix CTA Styles */
+  .topmate-remix-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: topmateRemixFadeIn 0.4s ease-out 1.5s forwards;
+  }
+
+  .topmate-remix-btn {
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    animation: topmateRemixFloat 3s ease-in-out infinite;
+  }
+
+  .topmate-remix-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+  }
+
+  .topmate-remix-btn:active {
+    transform: scale(0.98);
+  }
+
+  .topmate-remix-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .topmate-remix-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .topmate-remix-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  .topmate-remix-action {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .topmate-remix-brand {
+    font-size: 11px;
+    opacity: 0.8;
+    font-weight: 400;
+  }
+
+  /* Shine effect */
+  .topmate-remix-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+  }
+
+  .topmate-remix-btn:hover::before {
+    left: 100%;
+  }
+
+  /* Loading spinner */
+  .topmate-remix-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: topmateRemixSpin 1s linear infinite;
+    display: none;
+  }
+
+  .topmate-remix-btn.loading .topmate-remix-spinner {
+    display: block;
+  }
+
+  .topmate-remix-btn.loading .topmate-remix-icon {
+    display: none;
+  }
+
+  /* Toast notification */
+  .topmate-toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 99999;
+    background: #ffffff;
+    color: #1f2937;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #3B82F6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 320px;
+    min-width: 280px;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .topmate-toast.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .topmate-toast.error {
+    border-left-color: #EF4444;
+    background: #fef2f2;
+    color: #991b1b;
+  }
+
+  .topmate-toast.success {
+    border-left-color: #10B981;
+    background: #f0fdf4;
+    color: #065f46;
+  }
+
+  .topmate-toast.info {
+    border-left-color: #3B82F6;
+    background: #eff6ff;
+    color: #1e40af;
+  }
+
+  /* Animations */
+  @keyframes topmateRemixFadeIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes topmateRemixFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+
+  @keyframes topmateRemixSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .topmate-remix-cta {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .topmate-remix-btn {
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+    
+    .topmate-toast {
+      right: 16px;
+      left: 16px;
+      top: 20px;
+      max-width: none;
+      min-width: auto;
+      width: auto;
+      font-size: 13px;
+      padding: 14px 16px;
+    }
+  }
+
+  /* Extra small screens */
+  @media (max-width: 480px) {
+    .topmate-toast {
+      right: 12px;
+      left: 12px;
+      top: 16px;
+      font-size: 12px;
+      padding: 12px 14px;
+    }
+  }
+</style>
+</head>
+<body class="bg-brand-950 text-slate-200 font-body antialiased selection:bg-brand-400 selection:text-brand-950 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="pages/dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+                    <a href="pages/dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+                    <a href="pages/core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+                    <a href="pages/system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+                    <a href="pages/interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+                    <a href="pages/resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+                    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
+                        Premium Vault
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-slate-400 hover:text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-grid-pattern opacity-20 pointer-events-none"></div>
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-brand-500/20 rounded-full blur-[100px] animate-pulse-glow"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <!-- Hero Content -->
+                <div class="lg:w-1/2 text-center lg:text-left reveal-on-scroll">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/50 border border-brand-400/30 text-brand-400 text-xs font-bold tracking-wide uppercase mb-6 hover:bg-brand-400/10 transition-colors cursor-default">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-400"></span>
+                        </span>
+                        Industry-Standard Interview Preparation • Structured & Proven
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
+                        Crack Your Next <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Tech Interview</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        All-in-one Placement Preparation Hub for B.Tech CSE Students from DSA, Aptitude, Projects, Notes, Job Portals, CS Subjects, HR + Technical Interview, Mock Interview Tools, Roadmaps, etc.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                        <a href="pages/resources.html" class="w-full sm:w-auto px-8 py-4 rounded bg-brand-400 text-brand-950 font-bold text-lg hover:bg-white hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)] text-center">
+                            Explore Resources
+                        </a>
+                        <a href="pages/dsa-practice.html" class="w-full sm:w-auto px-8 py-4 rounded border border-slate-700 text-white font-medium hover:border-brand-400 hover:text-brand-400 transition-colors text-center bg-brand-900/30 backdrop-blur-sm">
+                            Practice DSA
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-6 text-slate-500 text-sm font-medium">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="users" class="w-5 h-5 text-brand-400"></i>
+                            <span>50K+ Community</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-400"></i>
+                            <span>480+ Bookings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image / Visual -->
+                <div class="lg:w-1/2 relative reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 mx-auto lg:mr-auto animate-float">
+                        <!-- Decorative Rings -->
+                        <div class="absolute inset-0 rounded-full border border-brand-400/20 scale-110"></div>
+                        <div class="absolute inset-0 rounded-full border border-dashed border-brand-400/20 scale-125 animate-spin-slow" style="animation-duration: 20s;"></div>
+                        
+                        <!-- Profile Image -->
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-brand-900 shadow-2xl relative z-10">
+                            <img src="https://static.topmate.io/aVnkTzxNScNggeeWHLLbbu.jpg" alt="Sanjay Saharan" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700">
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="absolute -right-4 top-10 bg-brand-900/90 backdrop-blur border border-slate-700 p-3 rounded-lg shadow-xl z-20 flex items-center gap-3 animate-float" style="animation-delay: 1s;">
+                            <div class="p-2 bg-green-500/20 rounded-md">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Placements</p>
+                                <p class="font-bold text-white">FAANG Ready</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -left-8 bottom-10 bg-brand-900/90 backdrop-blur border border-slate-700 p-3 rounded-lg shadow-xl z-20 flex items-center gap-3 animate-float" style="animation-delay: 2s;">
+                            <div class="p-2 bg-purple-500/20 rounded-md">
+                                <i data-lucide="code-2" class="w-5 h-5 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Resources</p>
+                                <p class="font-bold text-white">500+ Projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 bg-brand-900/30 border-y border-brand-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Everything You Need to Get Hired</h2>
+                <p class="text-slate-400">Comprehensive resources designed to take you from campus to corporate.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+
+              <!-- Feature 1 : DSA Sheets -->
+              <a href="pages/dsa-sheets.html"
+                class="p-6 rounded-2xl bg-brand-950 border border-slate-800 hover:border-brand-400/50 hover:bg-brand-900/50 transition-all group reveal-on-scroll block">
+                  <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <i data-lucide="file-spreadsheet" class="w-6 h-6 text-blue-400"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-white text-lg mb-2">DSA Sheets</h3>
+                  <p class="text-sm text-slate-400">Curated problem sets to master algorithms effectively.</p>
+              </a>
+
+              <!-- Feature 2 : Projects -->
+              <a href="pages/projects.html"
+                class="p-6 rounded-2xl bg-brand-950 border border-slate-800 hover:border-brand-400/50 hover:bg-brand-900/50 transition-all group reveal-on-scroll block"
+                style="transition-delay: 100ms;">
+                  <div class="w-12 h-12 bg-brand-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <i data-lucide="laptop" class="w-6 h-6 text-brand-400"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-white text-lg mb-2">Projects with Code</h3>
+                  <p class="text-sm text-slate-400">Real-world projects to beef up your portfolio.</p>
+              </a>
+
+              <!-- Feature 3 : Interview Kits -->
+              <a href="pages/interview-kits.html"
+                class="p-6 rounded-2xl bg-brand-950 border border-slate-800 hover:border-brand-400/50 hover:bg-brand-900/50 transition-all group reveal-on-scroll block"
+                style="transition-delay: 200ms;">
+                  <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <i data-lucide="briefcase" class="w-6 h-6 text-purple-400"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-white text-lg mb-2">Interview Kits</h3>
+                  <p class="text-sm text-slate-400">Company-specific preparation materials.</p>
+              </a>
+
+              <!-- Feature 4 : Hiring Alerts -->
+              <a href="pages/hiring-alerts.html"
+                class="p-6 rounded-2xl bg-brand-950 border border-slate-800 hover:border-brand-400/50 hover:bg-brand-900/50 transition-all group reveal-on-scroll block"
+                style="transition-delay: 300ms;">
+                  <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <i data-lucide="bell" class="w-6 h-6 text-green-400"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-white text-lg mb-2">Hiring Alerts</h3>
+                  <p class="text-sm text-slate-400">Timely notifications for off-campus drives.</p>
+              </a>
+
+              <!-- Feature 5 : Resume Templates -->
+              <a href="pages/resume-templates.html"
+                class="p-6 rounded-2xl bg-brand-950 border border-slate-800 hover:border-brand-400/50 hover:bg-brand-900/50 transition-all group reveal-on-scroll block"
+                style="transition-delay: 400ms;">
+                  <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <i data-lucide="file-text" class="w-6 h-6 text-orange-400"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-white text-lg mb-2">Resume Templates</h3>
+                  <p class="text-sm text-slate-400">ATS-friendly formats used by FAANG engineers.</p>
+              </a>
+
+              <!-- Feature 6 : Private Q&A -->
+              <a href="pages/private-qa.html"
+                class="p-6 rounded-2xl bg-brand-950 border border-slate-800 hover:border-brand-400/50 hover:bg-brand-900/50 transition-all group reveal-on-scroll block"
+                style="transition-delay: 500ms;">
+                  <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <i data-lucide="message-circle" class="w-6 h-6 text-pink-400"></i>
+                  </div>
+                  <h3 class="font-display font-bold text-white text-lg mb-2">Private Q&A</h3>
+                  <p class="text-sm text-slate-400">Direct mentorship and doubt resolution.</p>
+              </a>
+
+          </div>
+
+        </div>
+    </section>
+
+    <!-- Products Section (Bento Grid) -->
+    <section id="products" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-4">Premium <span class="text-brand-400">Resources</span></h2>
+                    <p class="text-slate-400 max-w-xl">Curated guides, cheat sheets, and courses to accelerate your developer journey.</p>
+                </div>
+                <a href="pages/resources.html" class="flex items-center gap-2 text-brand-400 font-bold hover:text-white transition-colors group">
+                    View All Products <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Large Card: Placement Bundle -->
+                <div class="lg:col-span-2 md:row-span-2 group relative rounded-3xl overflow-hidden border border-slate-800 bg-brand-900/40 hover:border-brand-400/50 transition-all duration-300 reveal-on-scroll">
+                    <div class="absolute top-4 left-4 z-20 bg-brand-400 text-brand-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                    <div class="h-64 sm:h-80 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent z-10"></div>
+                        <img src="https://static.topmate.io/5SWX4N2eavCEUDeCKBXY3a.png" alt="Engineer Placement Bundle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 sm:p-8 relative z-20 -mt-20">
+                        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white mb-2">Engineer Placement Bundle</h3>
+                        <p class="text-slate-300 mb-6 line-clamp-2">From BTech to FAANG – Everything you need for Placements & Tech Interviews in One Place.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-brand-400">₹199</span>
+                            <a href="https://topmate.io/codestudio/1698524" class="px-6 py-3 bg-white text-brand-950 rounded-lg font-bold hover:bg-brand-400 transition-colors flex items-center gap-2">
+                                Get Access <i data-lucide="download" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tall Card: DSA Drive -->
+                <div class="md:row-span-2 group relative rounded-3xl overflow-hidden border border-slate-800 bg-brand-900/40 hover:border-brand-400/50 transition-all duration-300 reveal-on-scroll" style="transition-delay: 100ms;">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent z-10"></div>
+                        <img src="https://topmate-staging.s3.amazonaws.com/5cRCrA6Pxd5eGB2Zr66iE4.jpg" alt="DSA Drive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Ultimate DSA Preparation</h3>
+                        <p class="text-sm text-slate-400 mb-4">Comprehensive resource hub for mastering Data Structures and Algorithms.</p>
+                        <ul class="space-y-2 mb-6 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> DSA Notes</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Interview Q&A</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-400"></i> Cheat Sheets</li>
+                        </ul>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-xl font-bold text-brand-400">₹199</span>
+                            <a href="https://topmate.io/codestudio/1664177" class="p-3 rounded-lg border border-slate-600 hover:bg-brand-400 hover:text-brand-950 hover:border-brand-400 transition-all">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Card: Projects -->
+                <div class="group relative rounded-3xl overflow-hidden border border-slate-800 bg-brand-900/40 hover:border-brand-400/50 transition-all duration-300 reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="flex h-full">
+                        <div class="w-1/3 relative overflow-hidden hidden sm:block">
+                            <img src="https://static.topmate.io/s1JPtL1DCMUDNb1ifVfgB6.png" alt="Projects" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-center">
+                            <h3 class="text-lg font-display font-bold text-white mb-1">500+ Projects Bundle</h3>
+                            <p class="text-xs text-slate-400 mb-4">Web & Python projects to build your portfolio.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-brand-400">₹99</span>
+                                <a href="https://topmate.io/codestudio/1746093" class="text-sm font-semibold underline decoration-brand-400 underline-offset-4 hover:text-brand-400">Get Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Card: React Course -->
+                <div class="group relative rounded-3xl overflow-hidden border border-slate-800 bg-brand-900/40 hover:border-brand-400/50 transition-all duration-300 reveal-on-scroll" style="transition-delay: 300ms;">
+                    <div class="flex h-full">
+                        <div class="w-1/3 relative overflow-hidden hidden sm:block">
+                            <img src="https://static.topmate.io/pcHNZE7gFJ5F1KyFqoz7xt.png" alt="React Course" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-center">
+                            <h3 class="text-lg font-display font-bold text-white mb-1">React.js Course</h3>
+                            <p class="text-xs text-slate-400 mb-4">Video lectures + projects. Zero to Frontend Ready.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-brand-400">₹199</span>
+                                <a href="https://topmate.io/codestudio/1834794" class="text-sm font-semibold underline decoration-brand-400 underline-offset-4 hover:text-brand-400">Start Learning</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Card: Resume (Free) -->
+                <div class="lg:col-span-2 group relative rounded-3xl overflow-hidden border border-slate-800 bg-gradient-to-r from-brand-900/80 to-blue-900/20 hover:border-brand-400/50 transition-all duration-300 reveal-on-scroll flex flex-col sm:flex-row items-center p-6 gap-6" style="transition-delay: 400ms;">
+                    <div class="w-16 h-16 rounded-full bg-brand-400/10 flex items-center justify-center shrink-0">
+                        <i data-lucide="file-text" class="w-8 h-8 text-brand-400"></i>
+                    </div>
+                    <div class="flex-1 text-center sm:text-left">
+                        <h3 class="text-xl font-display font-bold text-white mb-1">Resume for Top Companies (Free)</h3>
+                        <p class="text-sm text-slate-400">The exact format that landed interviews at Amazon, Google & Flipkart.</p>
+                    </div>
+                    <a href="https://topmate.io/codestudio/1736341" class="px-6 py-3 rounded-full border border-brand-400 text-brand-400 font-bold text-sm hover:bg-brand-400 hover:text-brand-950 transition-all">
+                        Download Free
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-28 bg-brand-950 border-t border-brand-800/30 relative overflow-hidden">
+
+  <!-- Background Glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.08),transparent_55%)]"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal-on-scroll">
+      <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+        Engineer Premium Content Vault
+      </h2>
+      <p class="text-slate-400 text-lg">
+        Your shortcut to cracking <span class="text-brand-400 font-semibold">internships, placements & tech jobs</span> — without wasting months hunting random PDFs.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Monthly Plan -->
+      <div class="group relative rounded-2xl border border-slate-800 bg-brand-900/20 p-8 hover:border-brand-400 transition-all reveal-on-scroll">
+        <div class="absolute -top-4 right-6 bg-slate-800 text-brand-400 text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+          75.4% OFF
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-2">Student Booster</h3>
+        <p class="text-sm text-slate-400 mb-6">Best for quick revision & interviews</p>
+
+        <div class="mb-6">
+          <span class="line-through text-slate-500 text-sm">₹199</span>
+          <div class="text-4xl font-display font-bold text-white">
+            ₹49<span class="text-base text-slate-400 font-normal"> / month</span>
+          </div>
+        </div>
+
+        <!-- Same Features -->
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✔ DSA + LeetCode Premium Sheets</li>
+          <li>✔ Paid Courses (FREE Access)</li>
+          <li>✔ Projects with Code + GitHub</li>
+          <li>✔ OS, DBMS, CN, OOP Notes</li>
+          <li>✔ Interview Kits + Hiring Alerts</li>
+          <li>✔ Resume Templates + Telegram Access</li>
+        </ul>
+
+        <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
+          class="block w-full py-3 rounded-lg border border-slate-700 text-white font-semibold text-center hover:border-brand-400 hover:text-brand-400 transition-all">
+          Start Monthly
+        </a>
+      </div>
+
+      <!-- Yearly Plan (Most Popular) -->
+      <div class="group relative rounded-2xl border border-brand-400 bg-brand-900/40 p-8 md:-translate-y-6 shadow-[0_0_40px_rgba(56,189,248,0.15)] reveal-on-scroll">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-400 text-brand-950 px-4 py-1 rounded-full text-xs font-bold uppercase">
+          Most Popular
+        </div>
+
+        <div class="absolute -top-4 right-6 bg-brand-400 text-brand-950 text-xs font-bold px-3 py-1 rounded-full animate-bounce">
+          80.2% OFF
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-2">Ultimate Booster</h3>
+        <p class="text-sm text-slate-400 mb-6">Perfect for full placement prep</p>
+
+        <div class="mb-6">
+          <span class="line-through text-slate-400 text-sm">₹499</span>
+          <div class="text-4xl font-display font-bold text-white">
+            ₹99<span class="text-base text-slate-400 font-normal"> / year</span>
+          </div>
+        </div>
+
+        <!-- Same Features -->
+        <ul class="space-y-3 text-sm text-white mb-8">
+          <li>✔ Everything in Monthly Plan + </li>
+          <li>✔ Semester Notes (All Branches)</li>
+          <li>✔ Career Reels + Placement Strategy</li>
+          <li>✔ Daily Updates (No Broken Links)</li>
+          <li>✔ Used by 700+ Students</li>
+        </ul>
+
+        <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
+          class="block w-full py-3 rounded-lg bg-brand-400 text-brand-950 font-bold text-center hover:bg-white transition-all shadow-lg">
+          Get Yearly Access
+        </a>
+      </div>
+
+      <!-- Lifetime Plan -->
+      <div class="group relative rounded-2xl border border-slate-800 bg-brand-900/20 p-8 hover:border-brand-400 transition-all reveal-on-scroll">
+        <div class="absolute -top-4 right-6 bg-emerald-400 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+          85.1% OFF
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-2">Premium Lifetime Vault</h3>
+        <p class="text-sm text-slate-400 mb-6">One-time payment. Lifetime access.</p>
+
+        <div class="mb-6">
+          <span class="line-through text-slate-500 text-sm">₹999</span>
+          <div class="text-4xl font-display font-bold text-white">
+            ₹149<span class="text-base text-slate-400 font-normal"> one-time</span>
+          </div>
+        </div>
+
+        <!-- Same Features -->
+        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+          <li>✔ Everything Included Forever</li>
+          <li>✔ All Future Updates FREE</li>
+          <li>✔ Private Telegram Priority Access</li>
+          <li>✔ 20,000+ INR Worth Content</li>
+        </ul>
+
+        <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
+          class="block w-full py-3 rounded-lg border border-slate-700 text-white font-semibold text-center hover:border-brand-400 hover:text-brand-400 transition-all">
+          Unlock Lifetime
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer Line -->
+    <p class="text-center text-slate-500 text-sm mt-16 max-w-4xl mx-auto">
+      One Vault = Everything You Need to Get Placed.  
+      <br class="hidden sm:block" />
+      Stop wasting 6 months hunting PDFs. Start preparing smart.
+    </p>
+
+  </div>
+</section>
+
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-brand-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-12 text-center reveal-on-scroll">Community Love</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6 reveal-on-scroll">
+                <!-- Verified Testimonial from JSON -->
+                <div class="bg-brand-950 p-6 rounded-2xl border border-slate-800 max-w-md w-full relative">
+                    <div class="absolute -top-3 -left-3">
+                        <i data-lucide="quote" class="w-8 h-8 text-brand-400/20 fill-current"></i>
+                    </div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center font-bold text-white">M</div>
+                        <div>
+                            <div class="font-bold text-white">Mihir Mehar</div>
+                            <div class="text-xs text-brand-400">Verified Student</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-300">"Helpful resources. The placement bundle covers everything needed for campus drives."</p>
+                    <div class="mt-4 flex text-yellow-500">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://topmate.io/codestudio" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
+                    View all 50K+ community members <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-brand-950">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-bold text-white mb-10 text-center reveal-on-scroll">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4 reveal-on-scroll">
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="w-full p-5 text-left bg-brand-900/30 hover:bg-brand-900/50 flex justify-between items-center transition-all group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+                        <span class="font-medium text-white">Why are these resources paid?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 bg-brand-950 text-slate-400 text-sm leading-relaxed border-t border-slate-800">
+                        These are premium, curated resources that save you hundreds of hours of searching. We've compiled the best materials to ensure your success.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="w-full p-5 text-left bg-brand-900/30 hover:bg-brand-900/50 flex justify-between items-center transition-all group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+                        <span class="font-medium text-white">How do I access the files?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 bg-brand-950 text-slate-400 text-sm leading-relaxed border-t border-slate-800">
+                        Immediately after purchase, you will receive a Google Drive link or download link via email and on the Topmate dashboard.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="w-full p-5 text-left bg-brand-900/30 hover:bg-brand-900/50 flex justify-between items-center transition-all group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+                        <span class="font-medium text-white">Is it a lifetime access?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 bg-brand-950 text-slate-400 text-sm leading-relaxed border-t border-slate-800">
+                        Yes! Once you purchase any bundle, you get lifetime access to the materials, including any future updates we add to that folder.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="w-full p-5 text-left bg-brand-900/30 hover:bg-brand-900/50 flex justify-between items-center transition-all group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-180');">
+                        <span class="font-medium text-white">Refund Policy</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 bg-brand-950 text-slate-400 text-sm leading-relaxed border-t border-slate-800">
+                        Since these are digital products (downloadable files), we typically do not offer refunds. However, if the file is corrupt or inaccessible, support will help you instantly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-900">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-950 to-transparent"></div>
+            <div class="absolute bottom-0 right-0 w-1/2 h-full bg-glow-gradient opacity-30"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Ready to Ace Your Interview?</h2>
+            <p class="text-slate-300 text-lg mb-10">Join thousands of students who have cracked their dream jobs using these resources.</p>
+            <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="inline-flex items-center gap-2 px-8 py-4 rounded bg-brand-400 text-brand-950 font-bold text-lg hover:scale-105 hover:bg-white transition-all shadow-[0_0_25px_rgba(34,211,238,0.4)]">
+                Get Full Access Now <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 border-t border-slate-800 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="text-center md:text-left">
+                    <span class="font-display font-bold text-xl text-white">Code<span class="text-brand-400">Studio</span></span>
+                    <p class="text-slate-500 mt-2">© 2025 Sanjay Saharan. All rights reserved.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://topmate.io/codestudio" class="text-slate-400 hover:text-white transition-colors">Resources 1</a>
+                    <a href="https://superprofile.bio/codestudio" class="text-slate-400 hover:text-white transition-colors">Resources 2</a>
+                </div>
+                <div class="flex flex-col items-center md:items-end gap-2 text-slate-400">
+                    <a href="/cdn-cgi/l/email-protection#196a78777378606a7871786b78772b2d29597e74787075377a7674" class="hover:text-brand-400 transition-colors"><span>sanjaysaharan240@gmail.com</span></a>
+                    <span>+91 9991359703</span>
+                </div>
+            </div>
+            <div class="text-center text-slate-600 text-xs border-t border-slate-900 pt-8">
+                <p>Transactions are secure.</p>
+                <p class="mt-2 opacity-50">Disclaimer: We are not affiliated with Cosmofeed or any specific company mentioned in success stories.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animations Script -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+    <!-- 
+    SEO & SOCIAL CONTENT DELIVERABLES
+    
+    META TITLE 1: Crack Your Next Tech Interview | CodeStudio Resources
+    META DESC 1: Master DSA, Projects, and System Design with CodeStudio. Download curated placement bundles and cheat sheets trusted by 50K+ students.
+    
+    META TITLE 2: CodeStudio - Premium Engineering Placement Resources
+    META DESC 2: Get the ultimate placement preparation bundle. Resume templates, DSA notes, and interview kits for B.Tech students. Start preparing today.
+
+    SOCIAL POST 1 (Insta Reel):
+    Caption: 🚀 Stop scrolling and start prepping! The Ultimate Placement Bundle is finally here. From DSA sheets to Resume templates, get everything you need to crack your dream job. Link in bio! 💻✨ #CodeStudio #PlacementPrep #EngineeringLife #DSA #TechJobs
+    
+    SOCIAL POST 2 (Tweet):
+    Struggling with placements? 🤯
+    I've compiled my best resources into one Mega Bundle:
+    ✅ DSA Notes
+    ✅ 500+ Projects
+    ✅ Resume Templates
+    
+    Grab it before the price goes up! 👇
+    [Link]
+    #Placement #Coding #Students
+
+    SOCIAL POST 3 (LinkedIn):
+    Are you placement ready? Most students fail not because of lack of skill, but lack of structured resources. I've curated the exact roadmap and materials that helped me and 50K+ others. Check out the Engineer Placement Bundle on Topmate. Let's crack it! 💼 #CareerGrowth #SoftwareEngineer
+    -->
+
+
+<!-- Mixpanel Library -->
+<script type="text/javascript">
+(function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+</script>
+
+<script>
+(function() {
+  'use strict';
+
+  // Configuration
+  const REMIX_CONFIG = {
+    slug: 'Uob5cMJ3Yi',
+    apiBaseUrl: 'https://d2ntssqgwvof3c.cloudfront.net/',
+    editorUrl: 'https://pages.topmate.io',
+    mixpanelToken: '41aae50bdc08049e39f8e2a6043ba379',
+    webengageLicenseCode: '~2024a7c4',
+    webengageEnabled: 'true',
+    isProd: 'true'
+  };
+
+  // Initialize Mixpanel
+  if (typeof window !== 'undefined' && window.mixpanel && REMIX_CONFIG.mixpanelToken) {
+    try {
+      window.mixpanel.init(REMIX_CONFIG.mixpanelToken, {
+        debug: REMIX_CONFIG.isProd !== 'true',
+        persistence: 'localStorage'
+      });
+    } catch (error) {
+      console.error('Mixpanel init failed:', error);
+    }
+  }
+
+  // Initialize WebEngage if enabled
+  if (REMIX_CONFIG.webengageEnabled === 'true' && REMIX_CONFIG.webengageLicenseCode && typeof window !== 'undefined' && window.webengage) {
+    try {
+      window.webengage.init(REMIX_CONFIG.webengageLicenseCode);
+    } catch (error) {
+      console.error('WebEngage init failed:', error);
+    }
+  }
+
+  // Utility function for cookie access (defined early for use in Analytics)
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
+
+  // Helper function to sanitize props for WebEngage
+  function sanitizeWebEngageProps(props) {
+    if (!props || typeof props !== 'object') return {};
+    const sanitized = {};
+    for (const key in props) {
+      const value = props[key];
+      if (value != null && value !== '' && !key.startsWith('$') && !key.startsWith('ss_')) {
+        if (typeof value === 'string' && value.length > 1000) {
+          sanitized[key] = value.substring(0, 1000);
+        } else {
+          sanitized[key] = value;
+        }
+      }
+    }
+    return sanitized;
+  }
+
+  // Create simplified Analytics object for HTML direct context
+  window.Analytics = {
+    track: function(eventName, properties = {}) {
+      if (typeof window !== 'undefined' && window.mixpanel) {
+        try {
+          const accessToken = getCookie('access_token');
+          const loginState = accessToken ? 'Logged In' : 'Logged Out';
+          
+          const defaultProps = {
+            State: loginState,
+            timestamp: new Date().toISOString(),
+            page_url: window.location.href,
+            user_agent: navigator.userAgent || 'Unknown',
+            source: 'html_direct_remix'
+          };
+          
+          const mergedProps = { ...defaultProps, ...properties };
+          window.mixpanel.track(eventName, mergedProps);
+        } catch (error) {
+          console.error('Analytics track failed:', error);
+        }
+      }
+
+      // WebEngage tracking (dual-write)
+      if (REMIX_CONFIG.webengageEnabled === 'true' && typeof window !== 'undefined' && window.webengage) {
+        try {
+          const accessToken = getCookie('access_token');
+          const loginState = accessToken ? 'Logged In' : 'Logged Out';
+          const defaultProps = {
+            State: loginState,
+            timestamp: new Date().toISOString(),
+            page_url: window.location.href,
+            user_agent: navigator.userAgent || 'Unknown',
+            source: 'html_direct_remix'
+          };
+          const mergedProps = { ...defaultProps, ...properties };
+          const sanitizedProps = sanitizeWebEngageProps(mergedProps);
+          window.webengage.track(eventName, sanitizedProps);
+        } catch (error) {
+          console.error('WebEngage track failed:', error);
+        }
+      }
+    },
+    
+    page: function(pageName, properties = {}) {
+      if (typeof window !== 'undefined' && window.mixpanel) {
+        try {
+          const defaultProps = {
+            page_name: pageName,
+            page_url: window.location.href,
+            timestamp: new Date().toISOString()
+          };
+          
+          const mergedProps = { ...defaultProps, ...properties };
+          window.mixpanel.track('Page Viewed', mergedProps);
+        } catch (error) {
+          console.error('Analytics page failed:', error);
+        }
+      }
+
+      // WebEngage page tracking (dual-write)
+      if (REMIX_CONFIG.webengageEnabled === 'true' && typeof window !== 'undefined' && window.webengage) {
+        try {
+          const defaultProps = {
+            page_name: pageName,
+            page_url: window.location.href,
+            timestamp: new Date().toISOString()
+          };
+          const mergedProps = { ...defaultProps, ...properties };
+          const sanitizedProps = sanitizeWebEngageProps(mergedProps);
+          window.webengage.track('Page Viewed', sanitizedProps);
+        } catch (error) {
+          console.error('WebEngage page track failed:', error);
+        }
+      }
+    },
+    
+    alias: function(id) {
+      if (typeof window !== 'undefined' && window.mixpanel) {
+        try {
+          window.mixpanel.alias(id);
+        } catch (error) {
+          console.error('Analytics alias failed:', error);
+        }
+      }
+    },
+    
+    reset: function() {
+      if (typeof window !== 'undefined' && window.mixpanel) {
+        try {
+          window.mixpanel.reset();
+        } catch (error) {
+          console.error('Analytics reset failed:', error);
+        }
+      }
+
+      // WebEngage logout (dual-write)
+      if (REMIX_CONFIG.webengageEnabled === 'true' && typeof window !== 'undefined' && window.webengage) {
+        try {
+          window.webengage.user.logout();
+        } catch (error) {
+          console.error('WebEngage logout failed:', error);
+        }
+      }
+    }
+  };
+
+  // Utility functions
+
+  function isLoggedIn() {
+    return !!getCookie('access_token');
+  }
+
+  function showToast(message, type = 'info') {
+    // Remove existing toasts
+    const existingToasts = document.querySelectorAll('.topmate-toast');
+    existingToasts.forEach(toast => toast.remove());
+
+    const toast = document.createElement('div');
+    toast.className = `topmate-toast ${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    // Show toast
+    setTimeout(() => toast.classList.add('show'), 100);
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 5000);
+  }
+
+  function trackEvent(eventName, properties = {}) {
+    const finalProperties = { ...properties };
+
+    // Track with Topmate Analytics if available (primary method)
+    if (typeof window !== 'undefined' && window.Analytics && window.Analytics.track) {
+      try {
+        window.Analytics.track(eventName, finalProperties);
+      } catch (error) {
+        console.error('Remix tracking failed:', error);
+      }
+    }
+
+    // Fallback to Google Analytics if available
+    if (typeof gtag !== 'undefined') {
+      try {
+        gtag('event', eventName, {
+          custom_parameter_1: 'topmate_remix',
+          ...finalProperties
+        });
+      } catch (error) {
+        console.error('GA tracking failed:', error);
+      }
+    }
+  }
+
+  async function makeRemixRequest(slug) {
+    // Use configured API base URL
+    const apiBaseUrl = REMIX_CONFIG.apiBaseUrl;
+    
+    if (!apiBaseUrl) {
+      throw new Error('API base URL not configured');
+    }
+
+    const token = getCookie('access_token');
+    if (!token) {
+      throw new Error('No authentication token found');
+    }
+
+    const requestUrl = `${apiBaseUrl}remix-site/${slug}/`;
+
+    try {
+      const response = await fetch(requestUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Token ${token}`
+        },
+        credentials: 'include' // Include cookies in the request
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || errorData.error || `Request failed with status ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      return responseData;
+    } catch (error) {
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        throw new Error('Network error - please check your connection and try again');
+      }
+      throw error;
+    }
+  }
+
+  function updateButtonState(button, isLoading) {
+    const actionText = button.querySelector('.topmate-remix-action');
+    if (isLoading) {
+      button.classList.add('loading');
+      button.disabled = true;
+      if (actionText) actionText.textContent = 'Remixing...';
+    } else {
+      button.classList.remove('loading');
+      button.disabled = false;
+      if (actionText) actionText.textContent = 'Remix';
+    }
+  }
+
+  async function handleRemixClick(event) {
+    event.preventDefault();
+    const button = event.currentTarget;
+
+    // Parse URL to extract username and slug from pattern /username/page/slug
+    let username = null;
+    let slug = REMIX_CONFIG.slug;
+    
+    if (typeof window !== 'undefined' && window.location && window.location.pathname) {
+      const pathMatch = window.location.pathname.match(new RegExp('^/([^/]+)/page/([^/]+)'));
+      if (pathMatch) {
+        username = pathMatch[1]; // Extract username from URL
+        slug = pathMatch[2]; // Extract slug from URL
+      }
+    }
+
+    // Track click - match original RemixCTA events exactly
+    trackEvent('remix_cta_clicked', {
+      username: username,
+      slug: slug,
+      is_logged_in: isLoggedIn(),
+      source: 'floating_cta'
+    });
+
+    // Check authentication (no redirect tracking to match original)
+    if (!isLoggedIn()) {
+      if (typeof window !== 'undefined' && window.location) {
+        const currentUrl = window.location.href;
+        const encodedRedirect = encodeURIComponent(currentUrl);
+        window.location.href = `/signup?redirect_to=${encodedRedirect}`;
+      }
+      return;
+    }
+
+    // Execute remix
+    try {
+      updateButtonState(button, true);
+      showToast('Creating your remix...', 'info');
+
+      const response = await makeRemixRequest(slug);
+      
+      // Handle different response structures (direct from backend vs Next.js API wrapper)
+      const threadId = response?.data?.thread_id || response?.thread_id;
+      
+      if (!threadId) {
+        throw new Error('No thread_id received in response');
+      }
+      
+      showToast('Site remixed successfully! Redirecting to editor...', 'success');
+      
+      // Track success - match original RemixCTA events exactly
+      trackEvent('remix_success', {
+        username: username,
+        slug: slug,
+        thread_id: threadId
+      });
+
+      // Redirect to editor
+      setTimeout(() => {
+        if (typeof window !== 'undefined' && window.open) {
+          window.open(
+            `${REMIX_CONFIG.editorUrl}?thread_id=${threadId}`,
+            '_blank'
+          );
+        } else {
+          // Fallback: try to navigate directly
+          const editorUrl = `${REMIX_CONFIG.editorUrl}?thread_id=${threadId}`;
+          if (typeof window !== 'undefined' && window.location) {
+            window.location.href = editorUrl;
+          }
+        }
+      }, 1000);
+
+    } catch (error) {
+      console.error('Remix error:', error);
+      showToast('Failed to remix site. Please try again.', 'error');
+      
+      // Track error - match original RemixCTA events exactly
+      trackEvent('remix_error', {
+        username: username,
+        slug: slug,
+        error: error.message || 'Unknown error'
+      });
+    } finally {
+      updateButtonState(button, false);
+    }
+  }
+
+  // Create and inject the remix CTA
+  function createRemixCTA() {
+    const ctaHtml = `
+      <div class="topmate-remix-cta">
+        <button class="topmate-remix-btn" id="topmate-remix-btn">
+          <div class="topmate-remix-spinner"></div>
+          <svg class="topmate-remix-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732L14.146 12.8l-1.179 4.456a1 1 0 01-1.856.048L9.5 13.134 6.146 11.2a1 1 0 010-1.732L9.5 6.866l1.611-4.170A1 1 0 0112 2z" clip-rule="evenodd" />
+          </svg>
+          <div class="topmate-remix-text">
+            <span class="topmate-remix-action">Remix</span>
+            <span class="topmate-remix-brand">with topmate</span>
+          </div>
+        </button>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', ctaHtml);
+
+    // Attach event listener
+    const button = document.getElementById('topmate-remix-btn');
+    if (button) {
+      button.addEventListener('click', handleRemixClick);
+    }
+  }
+
+  // Initialize when DOM and window are ready
+  function initialize() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    
+    createRemixCTA();
+    
+    // Parse URL to extract username and slug from pattern /username/page/slug
+    let username = null;
+    let slug = REMIX_CONFIG.slug;
+    
+    if (typeof window !== 'undefined' && window.location && window.location.pathname) {
+      const pathMatch = window.location.pathname.match(new RegExp('^/([^/]+)/page/([^/]+)'));
+      if (pathMatch) {
+        username = pathMatch[1]; // Extract username from URL
+        slug = pathMatch[2]; // Extract slug from URL
+      }
+    }
+    
+    // Track custom Sites Page Viewed event
+    if (typeof window !== 'undefined' && window.Analytics && window.Analytics.track) {
+      try {
+        trackEvent('Sites Page Viewed', {
+          username: username,
+          slug: slug,
+          page_url: window.location?.href || '',
+          referrer: document.referrer || null,
+          user_agent: navigator.userAgent || 'Unknown'
+        });
+      } catch (error) {
+        console.error('Sites page tracking failed:', error);
+      }
+    }
+    
+    // Track page view to match original /page/<slug> route exactly
+    if (typeof window !== 'undefined' && window.Analytics && window.Analytics.page) {
+      try {
+        window.Analytics.page('Topmate Sites Page Viewed', {
+          page: 'topmate_sites',
+          username: username,
+          slug: slug,
+          expert_id: null,
+          expert_name: null,  
+          thread_id: null,
+          service_id: null
+        });
+      } catch (error) {
+        console.error('Page tracking failed:', error);
+      }
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+      // Use setTimeout to ensure window is fully available
+      setTimeout(initialize, 0);
+    }
+  }
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9b10c027aa91a5d3","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"e0537fb10acb4578a95059d6e97e190a"}' crossorigin="anonymous"></script>
+</body>
+</html>

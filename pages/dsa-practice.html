@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DSA Practice | CodeStudio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+        <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+      </a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+        <a href="dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+        <a href="core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+        <a href="system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+        <a href="interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+        <a href="resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+        <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">Premium Vault</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 pt-24 pb-12">
+
+  <!-- Header -->
+  <div class="mb-10">
+    <h1 class="text-4xl font-bold mb-3">DSA Practice Sheet – NeetCode 75</h1>
+    <p class="text-slate-400 max-w-3xl">Curated DSA problems with progress tracking, notes, and resources.</p>
+
+    <!-- Progress -->
+    <div class="mt-6">
+      <div class="flex justify-between text-sm mb-2">
+        <span id="progressText">Progress: 0 / 0</span>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="w-full bg-slate-800 rounded-full h-3">
+        <div id="progressBar" class="bg-emerald-500 h-3 rounded-full transition-all" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="mt-6 flex flex-wrap gap-2 items-center">
+      <span class="text-sm font-medium">Filter by topic:</span>
+      <div id="topicFilters" class="flex flex-wrap gap-2"></div>
+
+      <button onclick="resetProgress()" class="ml-auto flex items-center gap-1 text-sm px-3 py-1 border border-slate-700 rounded hover:bg-slate-800">
+        🔄 Reset Progress
+      </button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto border border-slate-800 rounded-xl bg-slate-900/50">
+    <table class="w-full text-sm">
+      <thead class="bg-slate-800/50">
+        <tr class="text-left">
+          <th class="p-4">Status</th>
+          <th class="p-4">Topic</th>
+          <th class="p-4">Problem</th>
+          <th class="p-4">Resources</th>
+          <th class="p-4">Practice</th>
+          <th class="p-4">Note</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+</div>
+
+  <!-- Script -->
+  <script>
+    const problems = [
+      {
+        id: 1,
+        topic: "Arrays",
+        problem: "Two Sum",
+        practiceLink: "https://leetcode.com/problems/two-sum/",
+        resources: [{ label: "NeetCode", link: "https://youtu.be/KLlXCFG5TnA" }],
+        note: "Use hashmap for O(n)",
+        completed: false,
+      },
+      {
+        id: 2,
+        topic: "Arrays",
+        problem: "Best Time to Buy and Sell Stock",
+        practiceLink: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+        resources: [{ label: "NeetCode", link: "https://youtu.be/1pkOgXD63yU" }],
+        note: "Sliding window",
+        completed: false,
+      },
+      {
+        id: 3,
+        topic: "Binary",
+        problem: "Number of 1 Bits",
+        practiceLink: "https://leetcode.com/problems/number-of-1-bits/",
+        resources: [{ label: "NeetCode", link: "https://youtu.be/5Km3utixwZs" }],
+        note: "Use n & (n-1)",
+        completed: false,
+      },
+      {
+    id: 4,
+    topic: "Arrays",
+    problem: "Product of Array Except Self",
+    practiceLink: "https://leetcode.com/problems/product-of-array-except-self/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/bNvIQI2wAjk" },
+    ],
+    note: "Make two passes, first in-order, second in-reverse, to compute products",
+    completed: false,
+  },
+  {
+    id: 5,
+    topic: "Arrays",
+    problem: "Maximum Subarray",
+    practiceLink: "https://leetcode.com/problems/maximum-subarray/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/5WZl3MMT0Eg" },
+    ],
+    note: "Pattern: prev subarray cant be negative, dynamic programming: compute max sum for each prefix",
+    completed: false,
+  },
+  {
+    id: 6,
+    topic: "Arrays",
+    problem: "Maximum Product Subarray",
+    practiceLink: "https://leetcode.com/problems/maximum-product-subarray/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/lXVy6YWFcRM" },
+    ],
+    note: "DP: compute max and max-abs-val for each prefix subarr",
+    completed: false,
+  },
+  {
+    id: 7,
+    topic: "Arrays",
+    problem: "Find Minimum in Rotated Sorted Array",
+    practiceLink: "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/nIVW4P8b1VA" },
+    ],
+    note: "Check if half of array is sorted in order to find pivot, arr is guaranteed to be in at most two sorted subarrays",
+    completed: false,
+  },
+  {
+    id: 8,
+    topic: "Arrays",
+    problem: "Search in Rotated Sorted Array",
+    practiceLink: "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/U8XENwh8Oy8" },
+    ],
+    note: "At most two sorted halfs, mid will be apart of left sorted or right sorted, if target is in range of sorted portion then search it, otherwise search other half",
+    completed: false,
+  },
+  {
+    id: 9,
+    topic: "Arrays",
+    problem: "3Sum",
+    practiceLink: "https://leetcode.com/problems/3sum/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/jzZsG8n2R9A" },
+    ],
+    note: "Sort input, for each first element, find next two where -a = b+c, if a=prevA, skip a, if b=prevB skip b to elim duplicates; to find b,c use two pointers, left/right on remaining list",
+    completed: false,
+  },
+  {
+    id: 10,
+    topic: "Arrays",
+    problem: "Container With Most Water",
+    practiceLink: "https://leetcode.com/problems/container-with-most-water/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/UuiTKBwPgAo" },
+    ],
+    note: "Shrinking window, left/right initially at endpoints, shift the pointer with min height",
+    completed: false,
+  },
+
+  // Binary
+  {
+    id: 11,
+    topic: "Binary",
+    problem: "Sum of Two Integers",
+    practiceLink: "https://leetcode.com/problems/sum-of-two-integers/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/gVUrDV4tZfY" },
+    ],
+    note: "Add bit by bit, be mindful of carry, after adding, if carry is still 1, then add it as well",
+    completed: false,
+  },
+  {
+    id: 12,
+    topic: "Binary",
+    problem: "Number of 1 Bits",
+    practiceLink: "https://leetcode.com/problems/number-of-1-bits/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/5Km3utixwZs" },
+    ],
+    note: "Modulo, and dividing n; mod and div are expensive, to divide use bit shift, instead of mod to get 1's place use bitwise & 1",
+    completed: false,
+  },
+  {
+    id: 13,
+    topic: "Binary",
+    problem: "Counting Bits",
+    practiceLink: "https://leetcode.com/problems/counting-bits/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/RyBM56RIWrM" },
+    ],
+    note: "Write out result for num=16 to figure out pattern; res[i] = res[i - offset], where offset is the biggest power of 2 <= I",
+    completed: false,
+  },
+  {
+    id: 14,
+    topic: "Binary",
+    problem: "Missing Number",
+    practiceLink: "https://leetcode.com/problems/missing-number/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/WnPLSRLSANE" },
+    ],
+    note: "Compute expected sum - real sum; xor n with each index and value",
+    completed: false,
+  },
+  {
+    id: 15,
+    topic: "Binary",
+    problem: "Reverse Bits",
+    practiceLink: "https://leetcode.com/problems/reverse-bits/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/UcoN6UjAI64" },
+    ],
+    note: "Reverse each of 32 bits",
+    completed: false,
+  },
+
+  // Dynamic Programming
+  {
+    id: 16,
+    topic: "Dynamic Programming",
+    problem: "Climbing Stairs",
+    practiceLink: "https://leetcode.com/problems/climbing-stairs/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/Y0lT9Fck7qI" },
+    ],
+    note: "Subproblem find (n-1) and (n-2), sum = n",
+    completed: false,
+  },
+  {
+    id: 17,
+    topic: "Dynamic Programming",
+    problem: "Coin Change",
+    practiceLink: "https://leetcode.com/problems/coin-change/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/H9bfqozjoqs" },
+    ],
+    note: "Top-down: recursive dfs, for amount, branch for each coin, cache to store prev coin_count for each amount; bottom-up: compute coins for amount = 1, up until n, using for each coin (amount - coin), cache prev values",
+    completed: false,
+  },
+  {
+    id: 18,
+    topic: "Dynamic Programming",
+    problem: "Longest Increasing Subsequence",
+    practiceLink: "https://leetcode.com/problems/longest-increasing-subsequence/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/cjWnW0hdF1Y" },
+    ],
+    note: "Recursive: foreach num, get subseq with num and without num, only include num if prev was less, cache solution of each; dp=subseq length which must end with each num, curr num must be after a prev dp or by itself",
+    completed: false,
+  },
+  {
+    id: 19,
+    topic: "Dynamic Programming",
+    problem: "Longest Common Subsequence",
+    practiceLink: "https://leetcode.com/problems/longest-common-subsequence/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/Ua0GhsJSlWM" },
+    ],
+    note: "Recursive: if first chars are equal find lcs of remaining of each, else max of: lcs of first and remain of 2nd and lcs of 2nd remain of first, cache result; nested forloop to compute the cache without recursion",
+    completed: false,
+  },
+  {
+    id: 20,
+    topic: "Dynamic Programming",
+    problem: "Word Break Problem",
+    practiceLink: "https://leetcode.com/problems/word-break/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/Sx9NNgInc3A" },
+    ],
+    note: "For each prefix, if prefix is in dict and wordbreak(remaining str)=True, then return True, cache result of wordbreak",
+    completed: false,
+  },
+  {
+    id: 21,
+    topic: "Dynamic Programming",
+    problem: "Combination Sum",
+    practiceLink: "https://leetcode.com/problems/combination-sum/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/GBKI9VSKdGg" },
+    ],
+    note: "Visualize the decision tree, base case is curSum = or > target, each candidate can have children of itself or elements to right of it inorder to elim duplicate solutions",
+    completed: false,
+  },
+  {
+    id: 22,
+    topic: "Dynamic Programming",
+    problem: "House Robber",
+    practiceLink: "https://leetcode.com/problems/house-robber/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/73r3KWiEvyk" },
+    ],
+    note: "For each num, get max of prev subarr, or num + prev subarr not including last element, store results of prev, and prev not including last element",
+    completed: false,
+  },
+  {
+    id: 23,
+    topic: "Dynamic Programming",
+    problem: "House Robber II",
+    practiceLink: "https://leetcode.com/problems/house-robber-ii/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/rWAJCfYYOvM" },
+    ],
+    note: "Subarr = arr without first & last, get max of subarr, then pick which of first/last should be added to it",
+    completed: false,
+  },
+  {
+    id: 24,
+    topic: "Dynamic Programming",
+    problem: "Decode Ways",
+    practiceLink: "https://leetcode.com/problems/decode-ways/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/6aEyTjOwlJU" },
+    ],
+    note: "Can cur char be decoded in one or two ways? Recursion -> cache -> iterative dp solution, a lot of edge cases to determine, 52, 31, 29, 10, 20 only decoded one way, 11, 26 decoded two ways",
+    completed: false,
+  },
+  {
+    id: 25,
+    topic: "Dynamic Programming",
+    problem: "Unique Paths",
+    practiceLink: "https://leetcode.com/problems/unique-paths/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/IlEsdxuD4lY" },
+    ],
+    note: "Work backwards from solution, store paths for each position in grid, to further optimize, we don't store whole grid, only need to store prev row",
+    completed: false,
+  },
+  {
+    id: 26,
+    topic: "Dynamic Programming",
+    problem: "Jump Game",
+    practiceLink: "https://leetcode.com/problems/jump-game/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/Yan0cv2cLy8" },
+    ],
+    note: "Visualize the recursive tree, cache solution for O(n) time/mem complexity, iterative is O(1) mem, just iterate backwards to see if element can reach goal node, if yes, then set it equal to goal node, continue",
+    completed: false,
+  },
+
+  // Graph
+  {
+    id: 27,
+    topic: "Graph",
+    problem: "Clone Graph",
+    practiceLink: "https://leetcode.com/problems/clone-graph/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/mQeF6bN8hMk" },
+    ],
+    note: "Recursive dfs, hashmap for visited nodes",
+    completed: false,
+  },
+  {
+    id: 28,
+    topic: "Graph",
+    problem: "Course Schedule",
+    practiceLink: "https://leetcode.com/problems/course-schedule/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/EgI5nU9etnU" },
+    ],
+    note: "Build adjacentcy_list with edges, run dfs on each V, if while dfs on V we see V again, then loop exists, otherwise V isnt in a loop, 3 states= not visited, visited, still visiting",
+    completed: false,
+  },
+  {
+    id: 29,
+    topic: "Graph",
+    problem: "Pacific Atlantic Water Flow",
+    practiceLink: "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/s-VkcjHqkGI" },
+    ],
+    note: "Dfs each cell, keep track of visited, and track which reach pac, atl; dfs on cells adjacent to pac, atl, find overlap of cells that are visited by both pac and atl cells",
+    completed: false,
+  },
+  {
+    id: 30,
+    topic: "Graph",
+    problem: "Number of Islands",
+    practiceLink: "https://leetcode.com/problems/number-of-islands/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/pV2kpPD66nE" },
+    ],
+    note: "Foreach cell, if cell is 1 and unvisited run dfs, increment cound and marking each contiguous 1 as visited",
+    completed: false,
+  },
+  {
+    id: 31,
+    topic: "Graph",
+    problem: "Longest Consecutive Sequence",
+    practiceLink: "https://leetcode.com/problems/longest-consecutive-sequence/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/P6RZZMu_maU" },
+    ],
+    note: "Use bruteforce and try to optimize, consider the max subseq containing each num; add each num to hashset, for each num if num-1 doesn't exist, count the consecutive nums after num, ie num+1; there is also a union-find solution",
+    completed: false,
+  },
+  {
+    id: 32,
+    topic: "Graph",
+    problem: "Alien Dictionary (Leetcode Premium)",
+    practiceLink: "https://leetcode.com/problems/alien-dictionary/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/6kTZYvNNyps" },
+    ],
+    note: "Chars of a word not in order, the words are in order, find adjacency list of each unique char by iterating through adjacent words and finding first chars that are different, run topsort on graph and do loop detection",
+    completed: false,
+  },
+  {
+    id: 33,
+    topic: "Graph",
+    problem: "Graph Valid Tree (Leetcode Premium)",
+    practiceLink: "https://leetcode.com/problems/graph-valid-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/bXsUuownnoQ" },
+    ],
+    note: "Union find, if union return false, loop exists, at end size must equal n, or its not connected; dfs to get size and check for loop, since each edge is double, before dfs on neighbor of N, remove N from neighbor list of neighbor",
+    completed: false,
+  },
+  {
+    id: 34,
+    topic: "Graph",
+    problem: "Number of Connected Components in an Undirected Graph (Leetcode Premium)",
+    practiceLink: "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/8f1XPm4WOUc" },
+    ],
+    note: "Dfs on each node that hasn't been visited, increment component count, adjacency list; bfs and union find are possible",
+    completed: false,
+  },
+
+  // Interval
+  {
+    id: 35,
+    topic: "Interval",
+    problem: "Insert Interval",
+    practiceLink: "https://leetcode.com/problems/insert-interval/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/A8NUOmlwOlM" },
+    ],
+    note: "Insert new interval in order, then merge intervals; newinterval could only merge with one interval that comes before it, then add remaining intervals",
+    completed: false,
+  },
+  {
+    id: 36,
+    topic: "Interval",
+    problem: "Merge Intervals",
+    practiceLink: "https://leetcode.com/problems/merge-intervals/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/44H3cEC2fFM" },
+    ],
+    note: "Sort each interval, overlapping intervals should be adjacent, iterate and build solution; also graph method, less efficient, more complicated",
+    completed: false,
+  },
+  {
+    id: 37,
+    topic: "Interval",
+    problem: "Non-overlapping Intervals",
+    practiceLink: "https://leetcode.com/problems/non-overlapping-intervals/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/nONCGxWoUfM" },
+    ],
+    note: "Instead of removing, count how max num of intervals you can include, sort intervals, dp to compute max intervals up until the i-th interval",
+    completed: false,
+  },
+  {
+    id: 38,
+    topic: "Interval",
+    problem: "Meeting Rooms (Leetcode Premium)",
+    practiceLink: "https://leetcode.com/problems/meeting-rooms/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/PaJxqZVPhbg" },
+    ],
+    note: "Sort intervals by start time, if second interval doesn't overlap with first, then third def wont overlap with first",
+    completed: false,
+  },
+  {
+    id: 39,
+    topic: "Interval",
+    problem: "Meeting Rooms II (Leetcode Premium)",
+    practiceLink: "https://leetcode.com/problems/meeting-rooms-ii/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/FdzJmTCVyJU" },
+    ],
+    note: "We care about the points in time where we are starting/ending a meeting, we already are given those, just separate start/end and traverse counting num of meetings going at these points in time; for each meeting check if a prev meeting has finished before curr started, using min heap",
+    completed: false,
+  },
+
+  // Linked List
+  {
+    id: 40,
+    topic: "Linked List",
+    problem: "Reverse a Linked List",
+    practiceLink: "https://leetcode.com/problems/reverse-linked-list/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/G0_I-ZF0S38" },
+    ],
+    note: "Iterate through maintaining cur and prev; recursively reverse, return new head of list",
+    completed: false,
+  },
+  {
+    id: 41,
+    topic: "Linked List",
+    problem: "Detect Cycle in a Linked List",
+    practiceLink: "https://leetcode.com/problems/linked-list-cycle/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/gBTe7lFR3vc" },
+    ],
+    note: "Dict to remember visited nodes; two pointers at different speeds, if they meet there is loop",
+    completed: false,
+  },
+  {
+    id: 42,
+    topic: "Linked List",
+    problem: "Merge Two Sorted Lists",
+    practiceLink: "https://leetcode.com/problems/merge-two-sorted-lists/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/XIdigk956u0" },
+    ],
+    note: "Insert each node from one list into the other",
+    completed: false,
+  },
+  {
+    id: 43,
+    topic: "Linked List",
+    problem: "Merge K Sorted Lists",
+    practiceLink: "https://leetcode.com/problems/merge-k-sorted-lists/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/q5a5OiGbT6Q" },
+    ],
+    note: "Divied and conquer, merge lists, N totalnodes, k-lists, O(N*logk). For each list, find min val, insert it into list, use priorityQ to optimize finding min O(N*logk)",
+    completed: false,
+  },
+  {
+    id: 44,
+    topic: "Linked List",
+    problem: "Remove Nth Node From End Of List",
+    practiceLink: "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/XVuQxVej6y8" },
+    ],
+    note: "Use dummy node at head of list, compute len of list; two pointers, second has offset of n from first",
+    completed: false,
+  },
+  {
+    id: 45,
+    topic: "Linked List",
+    problem: "Reorder List",
+    practiceLink: "https://leetcode.com/problems/reorder-list/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/S5bfdUTrKLM" },
+    ],
+    note: "Reverse second half of list, then easily reorder it; non-optimal way is to store list in array",
+    completed: false,
+  },
+
+  // Matrix
+  {
+    id: 46,
+    topic: "Matrix",
+    problem: "Set Matrix Zeroes",
+    practiceLink: "https://leetcode.com/problems/set-matrix-zeroes/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/T41rL0L3Pnw" },
+    ],
+    note: "Use sets to keep track of all rows, cols to zero out, after, for each num if it is in a zero row or col then change it to 0; flag first cell in row, and col to mark row/col that needs to be zeroed",
+    completed: false,
+  },
+  {
+    id: 47,
+    topic: "Matrix",
+    problem: "Spiral Matrix",
+    practiceLink: "https://leetcode.com/problems/spiral-matrix/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/BJnMZNwUk1M" },
+    ],
+    note: "Keep track of visited cells; keep track of boundaries, layer-by-layer",
+    completed: false,
+  },
+  {
+    id: 48,
+    topic: "Matrix",
+    problem: "Rotate Image",
+    practiceLink: "https://leetcode.com/problems/rotate-image/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/fMSJSS7eO1w" },
+    ],
+    note: "Rotate layer-by-layer, use that it's a square as advantage, rotate positions in reverse order, store a in temp, a = b, b = c, c = d, d = temp",
+    completed: false,
+  },
+  {
+    id: 49,
+    topic: "Matrix",
+    problem: "Word Search",
+    practiceLink: "https://leetcode.com/problems/word-search/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/pfiQ_PS1g8E" },
+    ],
+    note: "Dfs on each cell, for each search remember visited cells, and remove cur visited cell right before you return from dfs",
+    completed: false,
+  },
+
+  // String
+  {
+    id: 50,
+    topic: "String",
+    problem: "Longest Substring Without Repeating Characters",
+    practiceLink: "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/wiGpQwVHdE0" },
+    ],
+    note: "Sliding window, if we see same char twice within curr window, shift start position",
+    completed: false,
+  },
+  {
+    id: 51,
+    topic: "String",
+    problem: "Longest Repeating Character Replacement",
+    practiceLink: "https://leetcode.com/problems/longest-repeating-character-replacement/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/gqXU1UyA8pk" },
+    ],
+    note: "PAY ATTENTION: limited to chars A-Z; for each capital char, check if it could create the longest repeating substr, use sliding window to optimize; check if windowlen=1 works, if yes, increment len, if not, shift window right",
+    completed: false,
+  },
+  {
+    id: 52,
+    topic: "String",
+    problem: "Minimum Window Substring",
+    practiceLink: "https://leetcode.com/problems/minimum-window-substring/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/jSto0O4AJbM" },
+    ],
+    note: "Need is num of unique char in T, HAVE is num of char we have valid count for, sliding window, move right until valid, if valid, increment left until invalid, to check validity keep track if the count of each unique char is satisfied",
+    completed: false,
+  },
+  {
+    id: 53,
+    topic: "String",
+    problem: "Valid Anagram",
+    practiceLink: "https://leetcode.com/problems/valid-anagram/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/9UtInBqnCgA" },
+    ],
+    note: "Hashmap to count each char in str1, decrement for str2",
+    completed: false,
+  },
+  {
+    id: 54,
+    topic: "String",
+    problem: "Group Anagrams",
+    practiceLink: "https://leetcode.com/problems/group-anagrams/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/vzdNOK2oB2E" },
+    ],
+    note: "For each of 26 chars, use count of each char in each word as tuple for key in dict, value is the list of anagrams",
+    completed: false,
+  },
+  {
+    id: 55,
+    topic: "String",
+    problem: "Valid Parentheses",
+    practiceLink: "https://leetcode.com/problems/valid-parentheses/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/WTzjTskDFMg" },
+    ],
+    note: "Push opening brace on stack, pop if matching close brace, at end if stack empty, return true",
+    completed: false,
+  },
+  {
+    id: 56,
+    topic: "String",
+    problem: "Valid Palindrome",
+    practiceLink: "https://leetcode.com/problems/valid-palindrome/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/jJXJ16kPFWg" },
+    ],
+    note: "Left, right pointers, update left and right until each points at alphanum, compare left and right, continue until left >= right, don't distinguish between upper/lowercase",
+    completed: false,
+  },
+  {
+    id: 57,
+    topic: "String",
+    problem: "Longest Palindromic Substring",
+    practiceLink: "https://leetcode.com/problems/longest-palindromic-substring/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/XYQecbcd6_c" },
+    ],
+    note: "Foreach char in str, consider it were the middle, consider if pali was odd or even",
+    completed: false,
+  },
+  {
+    id: 58,
+    topic: "String",
+    problem: "Palindromic Substrings",
+    practiceLink: "https://leetcode.com/problems/palindromic-substrings/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/4RACzI5-du8" },
+    ],
+    note: "Same as longest palindromic string, each char in str as middle and expand outwards, do same for pali of even len; maybe read up on manachers alg",
+    completed: false,
+  },
+  {
+    id: 59,
+    topic: "String",
+    problem: "Encode and Decode Strings (Leetcode Premium)",
+    practiceLink: "https://leetcode.com/problems/encode-and-decode-strings/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/B1k_sxOSgv8" },
+    ],
+    note: "Store length of str before each string and delimiter like '#'",
+    completed: false,
+  },
+
+  // Tree
+  {
+    id: 60,
+    topic: "Tree",
+    problem: "Maximum Depth of Binary Tree",
+    practiceLink: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/hTM3phVI6YQ" },
+    ],
+    note: "Recursive dfs to find max-depth of subtrees; iterative bfs to count number of levels in tree",
+    completed: false,
+  },
+  {
+    id: 61,
+    topic: "Tree",
+    problem: "Same Tree",
+    practiceLink: "https://leetcode.com/problems/same-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/vRbbcKXCxOw" },
+    ],
+    note: "Recursive dfs on both trees at the same time; iterative bfs compare each level of both trees",
+    completed: false,
+  },
+  {
+    id: 62,
+    topic: "Tree",
+    problem: "Invert/Flip Binary Tree",
+    practiceLink: "https://leetcode.com/problems/invert-binary-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/OnSn2XEQ4MY" },
+    ],
+    note: "Recursive dfs to invert subtrees; bfs to invert levels, use collections.deque; iterative dfs is easy with stack if doing pre-order traversal",
+    completed: false,
+  },
+  {
+    id: 63,
+    topic: "Tree",
+    problem: "Binary Tree Maximum Path Sum",
+    practiceLink: "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/Hr5cWUld4vU" },
+    ],
+    note: "Helper returns maxpathsum without splitting branches, inside helper we also update maxSum by computing maxpathsum WITH a split",
+    completed: false,
+  },
+  {
+    id: 64,
+    topic: "Tree",
+    problem: "Binary Tree Level Order Traversal",
+    practiceLink: "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/6ZnyEApgFYg" },
+    ],
+    note: "Iterative bfs, add prev level which doesn't have any nulls to the result",
+    completed: false,
+  },
+  {
+    id: 65,
+    topic: "Tree",
+    problem: "Serialize and Deserialize Binary Tree",
+    practiceLink: "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/u4JAi2JJhI8" },
+    ],
+    note: "Bfs every single non-null node is added to string, and it's children are added too, even if they're null, deserialize by adding each non-null node to queue, deque node, it's children are next two nodes in string",
+    completed: false,
+  },
+  {
+    id: 66,
+    topic: "Tree",
+    problem: "Subtree of Another Tree",
+    practiceLink: "https://leetcode.com/problems/subtree-of-another-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/E36O5SWp-LE" },
+    ],
+    note: "Traverse s to check if any subtree in s equals t; merkle hashing?",
+    completed: false,
+  },
+  {
+    id: 67,
+    topic: "Tree",
+    problem: "Construct Binary Tree from Preorder and Inorder Traversal",
+    practiceLink: "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/ihj4IQGZ2zc" },
+    ],
+    note: "First element in pre-order is root, elements left of root in in-order are left subtree, right of root are right subtree, recursively build subtrees",
+    completed: false,
+  },
+  {
+    id: 68,
+    topic: "Tree",
+    problem: "Validate Binary Search Tree",
+    practiceLink: "https://leetcode.com/problems/validate-binary-search-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/s6ATEkipzow" },
+    ],
+    note: "Trick is use built in python min/max values float('inf'), '-inf', as parameters; iterative in-order traversal, check each val is greater than prev",
+    completed: false,
+  },
+  {
+    id: 69,
+    topic: "Tree",
+    problem: "Kth Smallest Element in a BST",
+    practiceLink: "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/5LUXSvjmGCw" },
+    ],
+    note: "Non-optimal store tree in sorted array; iterative dfs in-order and return the kth element processed, go left until null, pop, go right once",
+    completed: false,
+  },
+  {
+    id: 70,
+    topic: "Tree",
+    problem: "Lowest Common Ancestor of BST",
+    practiceLink: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/gs2LMfuOR9k" },
+    ],
+    note: "Compare p, q values to curr node, base case: one is in left, other in right subtree, then curr is lca",
+    completed: false,
+  },
+  {
+    id: 71,
+    topic: "Tree",
+    problem: "Implement Trie (Prefix Tree)",
+    practiceLink: "https://leetcode.com/problems/implement-trie-prefix-tree/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/oobqoCJlHA0" },
+    ],
+    note: "Node has children characters, and bool if its an ending character, node DOESN'T have or need char, since root node doesn't have a char, only children",
+    completed: false,
+  },
+  {
+    id: 72,
+    topic: "Tree",
+    problem: "Add and Search Word",
+    practiceLink: "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/BTf05gs_8iU" },
+    ],
+    note: "If char = '.' run search for remaining portion of word on all of curr nodes children",
+    completed: false,
+  },
+  {
+    id: 73,
+    topic: "Tree",
+    problem: "Word Search II",
+    practiceLink: "https://leetcode.com/problems/word-search-ii/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/asbcE9mZz_U" },
+    ],
+    note: "Trick: I though use trie to store the grid, reverse thinking, instead store dictionary words, dfs on each cell, check if cell's char exists as child of root node in trie, if it does, update currNode, and check neighbors, a word could exist multiple times in grid, so don't add duplicates",
+    completed: false,
+  },
+
+  // Heap
+  {
+    id: 74,
+    topic: "Heap",
+    problem: "Find Minimum in Rotated Sorted Array",
+    practiceLink: "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/nIVW4P8b1VA" },
+    ],
+    note: "Check if half of array is sorted in order to find pivot, arr is guaranteed to be in at most two sorted subarrays",
+    completed: false,
+  },
+  {
+    id: 75,
+    topic: "Heap",
+    problem: "Top K Frequent Elements",
+    practiceLink: "https://leetcode.com/problems/top-k-frequent-elements/",
+    resources: [
+      { label: "NeetCode", link: "https://youtu.be/YPTqKIgVk-k" },
+    ],
+    note: "We always want the min of the current frontier, we can store frontier in heap of size k for efficient pop/push; divide and conquer merging lists",
+    completed: false,
+  },
+    ]
+
+    let selectedTopic = "All"
+
+    function renderFilters() {
+      const topics = ["All", ...new Set(problems.map(p => p.topic))]
+      const container = document.getElementById("topicFilters")
+      container.innerHTML = ""
+
+      topics.forEach(topic => {
+        const btn = document.createElement("button")
+        btn.textContent = topic
+        btn.className =
+          "text-sm px-3 py-1 rounded border " +
+          (selectedTopic === topic
+            ? "bg-emerald-500 text-black"
+            : "border-slate-700 hover:bg-slate-800")
+        btn.onclick = () => {
+          selectedTopic = topic
+          renderTable()
+          renderFilters()
+        }
+        container.appendChild(btn)
+      })
+    }
+
+    function toggleComplete(id) {
+      const item = problems.find(p => p.id === id)
+      item.completed = !item.completed
+      renderTable()
+    }
+
+    function resetProgress() {
+      problems.forEach(p => (p.completed = false))
+      renderTable()
+    }
+
+    function updateProgress() {
+      const completed = problems.filter(p => p.completed).length
+      const total = problems.length
+      const percent = Math.round((completed / total) * 100)
+
+      document.getElementById("progressText").textContent =
+        `Progress: ${completed} / ${total}`
+      document.getElementById("progressPercent").textContent = percent + "%"
+      document.getElementById("progressBar").style.width = percent + "%"
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById("tableBody")
+      tbody.innerHTML = ""
+
+      problems
+        .filter(p => selectedTopic === "All" || p.topic === selectedTopic)
+        .forEach(item => {
+          const tr = document.createElement("tr")
+          tr.className = "border-t border-slate-800 hover:bg-slate-800/40"
+
+          tr.innerHTML = `
+            <td class="p-4">
+              <button onclick="toggleComplete(${item.id})">
+                ${item.completed ? "✅" : "⬜"}
+              </button>
+            </td>
+            <td class="p-4 font-medium">${item.topic}</td>
+            <td class="p-4 font-semibold">${item.problem}</td>
+            <td class="p-4">
+              ${item.resources
+                .map(
+                  r =>
+                    `<a href="${r.link}" target="_blank" class="text-emerald-400 hover:underline block">${r.label}</a>`
+                )
+                .join("")}
+            </td>
+            <td class="p-4">
+              <a href="${item.practiceLink}" target="_blank"
+                class="px-3 py-1 bg-emerald-500 text-black rounded text-sm">
+                Practice
+              </a>
+            </td>
+            <td class="p-4 text-slate-400 max-w-md">${item.note || "-"}</td>
+          `
+          tbody.appendChild(tr)
+        })
+
+      updateProgress()
+    }
+
+    renderFilters()
+    renderTable()
+  </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DSA Practice | CodeStudio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-brand-950 text-slate-200 font-body">
+
+  <nav class="p-6 border-b border-slate-800">
+    <a href="../page.html" class="text-brand-400 font-bold text-lg">← Back to Home</a>
+  </nav>
+
+  <section class="py-10 px-6 max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-white mb-6">DSA Practice</h1>
+    <p class="text-slate-400 mb-6">Important curated sheets and coding problem lists:</p>
+
+    <ul class="list-disc list-inside space-y-4 text-lg text-brand-400 font-semibold">
+      <li><a href="https://takeuforward.org/dsa/strivers-sde-sheet-top-coding-interview-problems" target="_blank" class="hover:underline">Striver’s SDE Sheet — Top Coding Interview Problems</a></li>
+      <li><a href="https://www.geeksforgeeks.org/dsa/dsa-sheet-by-love-babbar/" target="_blank" class="hover:underline">DSA Sheet by Love Babbar</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1hXserPuxVoWMG9Hs7y8wVdRCJTcj3xMBAEYUOXQ5Xag/edit#gid=0" target="_blank" class="hover:underline">Apna College DSA Sheet</a></li>
+      <li><a href="https://neetcode.io/practice/practice/coreSkills" target="_blank" class="hover:underline">NeetCode 150 Practice</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1MGVBJ8HkRbCnU6EQASjJKCqQE8BWng4qgL0n3vCVOxE/edit#gid=0" target="_blank" class="hover:underline">DSA Sheet by Arsh (45–60 Days Plan)</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1kyHfGGaLTzWspcqMUUS5Httmip7t8LJB0P-uPrRLGos/edit?gid=0#gid=0" target="_blank" class="hover:underline">AlgoPrep’s 151 Problems Sheet</a></li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-white mt-10 mb-4">Extra Practice Resources</h2>
+    <ul class="list-disc list-inside space-y-3 text-lg text-slate-300">
+      <li><a href="https://www.interviewbit.com/data-structure-interview-questions/" target="_blank" class="text-brand-400 hover:underline">Data Structure Interview Questions – InterviewBit</a> — extra DSA Q&A for interview practice.:contentReference[oaicite:0]{index=0}</li>
+      <li><a href="https://techinterviewhandbook.org/algorithms/study-cheatsheet/" target="_blank" class="text-brand-400 hover:underline">DSA Study Cheatsheet – Tech Interview Handbook</a> — covers arrays, strings, trees, and graphs study guides.:contentReference[oaicite:1]{index=1}</li>
+      <li><a href="https://medium.com/javarevisited/8-best-data-structures-and-algorithms-books-for-software-engineers-and-developers-4d3af68542e7" target="_blank" class="text-brand-400 hover:underline">Top DSA Books (Medium)</a> — good books to strengthen fundamentals.:contentReference[oaicite:2]{index=2}</li>
+    </ul>
+  </section>
+
+</body>
+</html> -->
