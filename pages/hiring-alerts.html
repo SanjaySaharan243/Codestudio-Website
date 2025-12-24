@@ -1,56 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hiring Alerts | CodeStudio</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              950: '#020617',
+              900: '#0f172a',
+              800: '#1e293b',
+              400: '#22d3ee',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+    .glass {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+    }
+
+    .card {
+      transition: all 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px rgba(34,211,238,0.25);
+    }
+
+    .glow {
+      box-shadow: 0 0 60px rgba(34,211,238,0.3);
+    }
+  </style>
 </head>
 
-<body class="bg-slate-950 text-slate-200">
-
-
-
-<!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="../index.html" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">
-          C
+<body class="bg-brand-950 text-slate-200 font-body">
+ <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+                    <a href="dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+                    <a href="core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+                    <a href="system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+                    <a href="interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+                    <a href="resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+                    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
+                        Premium Vault
+                    </a>
+                </div>
+            </div>
         </div>
-        <span class="font-display font-bold text-xl tracking-tight text-white">
-          Code<span class="text-brand-400">Studio</span>
-        </span>
-      </a>
+    </nav>
 
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
-        <a href="dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
-        <a href="core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
-        <a href="system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
-        <a href="interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
-        <a href="resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
-        <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
-           class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
-          Premium Vault
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
+<!-- HERO -->
+<section class="pt-32 pb-24 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-96 h-96 bg-cyan-500/20 blur-[120px] rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-[120px] rounded-full"></div>
 
-<section class="max-w-7xl mx-auto px-6 pt-24 pb-14">
-  <h1 class="text-4xl font-bold mb-3">Hiring Alerts</h1>
-  <p class="text-slate-400 mb-10 max-w-2xl">
-    Latest off-campus and referral job openings.
-  </p>
-
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="card">Off-campus Drives</div>
-    <div class="card">Internship Openings</div>
-    <div class="card">Referral Opportunities</div>
+  <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+    <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">
+      Real-Time <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">Hiring Alerts</span>
+    </h1>
+    <p class="text-lg text-slate-400 max-w-3xl mx-auto">
+      Never miss internships, off-campus drives, referrals & freshers hiring again.
+    </p>
   </div>
 </section>
+
+<!-- WHY HIRING ALERTS -->
+<section class="pb-24">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+
+    <div class="card p-6 rounded-2xl bg-brand-900/40 border border-slate-800">
+      <h3 class="font-bold text-xl mb-2 text-cyan-400">Verified Opportunities</h3>
+      <p class="text-sm text-slate-400">
+        Only legit hiring links — no fake Telegram spam or expired jobs.
+      </p>
+    </div>
+
+    <div class="card p-6 rounded-2xl bg-brand-900/40 border border-slate-800">
+      <h3 class="font-bold text-xl mb-2 text-purple-400">Daily Updates</h3>
+      <p class="text-sm text-slate-400">
+        Internships, freshers & experienced roles updated daily.
+      </p>
+    </div>
+
+    <div class="card p-6 rounded-2xl bg-brand-900/40 border border-slate-800">
+      <h3 class="font-bold text-xl mb-2 text-green-400">Beginner Friendly</h3>
+      <p class="text-sm text-slate-400">
+        Jobs for zero experience, students & self-taught developers.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- JOB CATEGORIES -->
+<section class="py-24 bg-brand-900/30">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-display font-bold mb-16 text-center">
+      What Kind of Alerts You’ll Get
+    </h2>
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800 text-center">
+        <i data-lucide="graduation-cap" class="w-10 h-10 mx-auto mb-4 text-brand-400"></i>
+        <h3 class="font-bold mb-2">Internships</h3>
+        <p class="text-sm text-slate-400">Paid & unpaid internships with hiring potential.</p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800 text-center">
+        <i data-lucide="briefcase" class="w-10 h-10 mx-auto mb-4 text-brand-400"></i>
+        <h3 class="font-bold mb-2">Fresher Jobs</h3>
+        <p class="text-sm text-slate-400">0–2 year experience off-campus drives.</p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800 text-center">
+        <i data-lucide="users" class="w-10 h-10 mx-auto mb-4 text-brand-400"></i>
+        <h3 class="font-bold mb-2">Referral Hiring</h3>
+        <p class="text-sm text-slate-400">Referral-based openings from insiders.</p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800 text-center">
+        <i data-lucide="building" class="w-10 h-10 mx-auto mb-4 text-brand-400"></i>
+        <h3 class="font-bold mb-2">Startup Roles</h3>
+        <p class="text-sm text-slate-400">Early-stage startups hiring fast.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-display font-bold mb-12 text-center">
+      How Hiring Alerts Work
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="card p-6 rounded-xl bg-brand-900/40 border border-slate-800 text-center">
+        <div class="text-brand-400 text-4xl font-bold mb-4">1</div>
+        <h3 class="font-bold mb-2">Join Premium</h3>
+        <p class="text-sm text-slate-400">Get access to private alert channels.</p>
+      </div>
+
+      <div class="card p-6 rounded-xl bg-brand-900/40 border border-slate-800 text-center">
+        <div class="text-brand-400 text-4xl font-bold mb-4">2</div>
+        <h3 class="font-bold mb-2">Receive Alerts</h3>
+        <p class="text-sm text-slate-400">Daily curated hiring notifications.</p>
+      </div>
+
+      <div class="card p-6 rounded-xl bg-brand-900/40 border border-slate-800 text-center">
+        <div class="text-brand-400 text-4xl font-bold mb-4">3</div>
+        <h3 class="font-bold mb-2">Apply Early</h3>
+        <p class="text-sm text-slate-400">Higher chances due to early applications.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center relative">
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-400/10 to-purple-500/10 blur-3xl"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl font-display font-bold mb-6">
+      Stop Searching. Start Applying.
+    </h2>
+    <p class="text-slate-400 mb-10">
+      Let opportunities come to you automatically.
+    </p>
+
+    <a href="premium-vault.html"
+       class="inline-flex items-center gap-2 px-10 py-4 rounded bg-brand-400 text-brand-950 font-bold text-lg hover:scale-105 transition glow">
+      Unlock Hiring Alerts <i data-lucide="bell"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+  © 2025 CodeStudio — Opportunities Delivered Daily
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>

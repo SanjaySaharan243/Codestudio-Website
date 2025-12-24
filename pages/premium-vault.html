@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Vault | CodeStudio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              950: '#020617',
+              900: '#0f172a',
+              800: '#1e293b',
+              400: '#22d3ee',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+    .glass {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+    }
+
+    .card {
+      transition: all 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(34,211,238,0.3);
+    }
+
+    .glow {
+      box-shadow: 0 0 80px rgba(34,211,238,0.35);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-950 text-slate-200 font-body">
+
+<!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+                    <a href="dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+                    <a href="core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+                    <a href="system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+                    <a href="interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+                    <a href="resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+                    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
+                        Premium Vault
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<section class="pt-36 pb-28 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/20 blur-[140px] rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/20 blur-[140px] rounded-full"></div>
+
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <span class="inline-block mb-6 px-5 py-2 rounded-full bg-brand-400/10 text-brand-400 text-sm font-bold">
+      🚀 Lifetime Access • One-Time Price
+    </span>
+
+    <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">
+      The <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">Premium Vault</span>
+    </h1>
+
+    <p class="text-lg text-slate-400 max-w-3xl mx-auto mb-10">
+      Everything you need to crack internships, placements, and interviews —  
+      **DSA, Core CS, System Design, Projects, Hiring Alerts & more.**
+    </p>
+
+    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
+       class="inline-flex items-center gap-2 px-10 py-5 rounded bg-brand-400 text-brand-950 font-bold text-xl hover:scale-105 transition glow">
+      Unlock Lifetime Vault – ₹149 <i data-lucide="arrow-right"></i>
+    </a>
+
+    <p class="text-xs text-slate-500 mt-4">One-time payment • No subscriptions • Instant access</p>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="py-28 bg-brand-900/30">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-display font-bold text-center mb-20">
+      What’s Inside the Vault
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="card p-8 rounded-2xl bg-brand-950 border border-slate-800">
+        <i data-lucide="layers" class="w-10 h-10 text-brand-400 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">DSA Mastery</h3>
+        <p class="text-slate-400 text-sm">
+          Striver, NeetCode 150, Blind 75, patterns & revision sheets.
+        </p>
+      </div>
+
+      <div class="card p-8 rounded-2xl bg-brand-950 border border-slate-800">
+        <i data-lucide="cpu" class="w-10 h-10 text-brand-400 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Core CS + System Design</h3>
+        <p class="text-slate-400 text-sm">
+          OS, DBMS, CN, SQL, LLD + HLD explained for interviews.
+        </p>
+      </div>
+
+      <div class="card p-8 rounded-2xl bg-brand-950 border border-slate-800">
+        <i data-lucide="github" class="w-10 h-10 text-brand-400 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Projects with Code</h3>
+        <p class="text-slate-400 text-sm">
+          500+ resume-ready projects (Web, Python, ML, Full-Stack).
+        </p>
+      </div>
+
+      <div class="card p-8 rounded-2xl bg-brand-950 border border-slate-800">
+        <i data-lucide="bell" class="w-10 h-10 text-brand-400 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Hiring Alerts</h3>
+        <p class="text-slate-400 text-sm">
+          Daily internship, fresher & off-campus hiring alerts.
+        </p>
+      </div>
+
+      <div class="card p-8 rounded-2xl bg-brand-950 border border-slate-800">
+        <i data-lucide="file-text" class="w-10 h-10 text-brand-400 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">ATS Resume Vault</h3>
+        <p class="text-slate-400 text-sm">
+          FAANG-tested resumes + referral email templates.
+        </p>
+      </div>
+
+      <div class="card p-8 rounded-2xl bg-brand-950 border border-slate-800">
+        <i data-lucide="message-circle" class="w-10 h-10 text-brand-400 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Private Q&A</h3>
+        <p class="text-slate-400 text-sm">
+          Doubts, mentorship & guidance via private community.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY PRICE -->
+<section class="py-28">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="text-4xl font-display font-bold mb-8">
+      Why ₹149 is a Steal
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10 mt-12">
+
+      <div class="card p-6 rounded-xl bg-brand-900/40 border border-slate-800">
+        <h3 class="font-bold mb-2">If Bought Separately</h3>
+        <p class="text-slate-400 text-sm">Courses, sheets & drives cost ₹5,000+</p>
+      </div>
+
+      <div class="card p-6 rounded-xl bg-brand-900/40 border border-slate-800">
+        <h3 class="font-bold mb-2">One Time Payment</h3>
+        <p class="text-slate-400 text-sm">No monthly fees. Lifetime updates.</p>
+      </div>
+
+      <div class="card p-6 rounded-xl bg-brand-900/40 border border-slate-800">
+        <h3 class="font-bold mb-2">Student Focused</h3>
+        <p class="text-slate-400 text-sm">Priced for Indian students.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-28 text-center relative">
+  <div class="absolute inset-0 bg-gradient-to-r from-brand-400/10 to-purple-500/10 blur-3xl"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+      This Is Your Shortcut 🚀
+    </h2>
+    <p class="text-slate-400 mb-10">
+      Stop wasting months searching.  
+      Get everything — instantly.
+    </p>
+
+    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
+       class="inline-flex items-center gap-2 px-12 py-5 rounded bg-brand-400 text-brand-950 font-bold text-xl hover:scale-105 transition glow">
+      Unlock Lifetime Vault – ₹149 <i data-lucide="lock"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+  © 2025 CodeStudio — Built for Serious Developers
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

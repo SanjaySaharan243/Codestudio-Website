@@ -1,63 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DSA Notes | CodeStudio</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              950: '#020617',
+              900: '#0f172a',
+              800: '#1e293b',
+              400: '#22d3ee',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+    .glass {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(34, 211, 238, 0.15);
+    }
+
+    .card {
+      transition: all 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(34, 211, 238, 0.25);
+    }
+  </style>
 </head>
 
-<body class="bg-slate-950 text-slate-200">
-
+<body class="bg-brand-950 text-slate-200 font-body">
 <!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="../index.html" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">
-          C
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+                    <a href="dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+                    <a href="core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+                    <a href="system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+                    <a href="interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+                    <a href="resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+                    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
+                        Premium Vault
+                    </a>
+                </div>
+            </div>
         </div>
-        <span class="font-display font-bold text-xl tracking-tight text-white">
-          Code<span class="text-brand-400">Studio</span>
-        </span>
-      </a>
+    </nav>
 
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
-        <a href="dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
-        <a href="core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
-        <a href="system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
-        <a href="interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
-        <a href="resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
-        <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66"
-           class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
-          Premium Vault
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
+<!-- HERO -->
+<section class="pt-32 pb-24 relative">
+  <div class="absolute top-40 left-1/3 w-96 h-96 bg-brand-400/20 blur-[120px] rounded-full animate-pulse"></div>
 
-
-<section class="max-w-7xl mx-auto px-6 pt-24 pb-14">
-  <h1 class="text-4xl font-bold mb-3">DSA Notes</h1>
-  <p class="text-slate-400 mb-10 max-w-2xl">
-    Concise and structured notes to revise Data Structures & Algorithms.
-  </p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <a href="https://takeuforward.org/strivers-a2z-dsa-course/" target="_blank"
-       class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-400/50 hover:bg-slate-800 transition-all">
-      <h3 class="text-lg font-bold mb-2">Striver A2Z Notes</h3>
-      <p class="text-sm text-slate-400">Beginner → Advanced DSA notes.</p>
-    </a>
-
-    <a href="https://www.geeksforgeeks.org/data-structures/" target="_blank"
-       class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-400/50 hover:bg-slate-800 transition-all">
-      <h3 class="text-lg font-bold mb-2">GeeksforGeeks</h3>
-      <p class="text-sm text-slate-400">Concepts + examples.</p>
-    </a>
+  <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+    <h1 class="text-5xl md:text-6xl font-display font-bold mb-6">
+      DSA <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-500">Notes</span>
+    </h1>
+    <p class="text-lg text-slate-400 max-w-3xl mx-auto">
+      Clean, interview-focused notes to revise Data Structures & Algorithms fast.
+    </p>
   </div>
 </section>
+
+<!-- WHY NOTES -->
+<section class="pb-24">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+
+    <div class="card p-6 rounded-2xl bg-brand-900/40 border border-slate-800">
+      <h3 class="font-bold text-xl mb-2 text-brand-400">Crisp & Concise</h3>
+      <p class="text-sm text-slate-400">
+        No long theory — only what matters in interviews.
+      </p>
+    </div>
+
+    <div class="card p-6 rounded-2xl bg-brand-900/40 border border-slate-800">
+      <h3 class="font-bold text-xl mb-2 text-green-400">Pattern-Based</h3>
+      <p class="text-sm text-slate-400">
+        Notes mapped to real DSA problem patterns.
+      </p>
+    </div>
+
+    <div class="card p-6 rounded-2xl bg-brand-900/40 border border-slate-800">
+      <h3 class="font-bold text-xl mb-2 text-purple-400">Quick Revision</h3>
+      <p class="text-sm text-slate-400">
+        Perfect before coding rounds & exams.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- NOTES LIST -->
+<section class="py-24 bg-brand-900/30">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-display font-bold mb-12 text-center">
+      DSA Topics Covered
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Arrays & Strings</h3>
+        <p class="text-sm text-slate-400">
+          Two pointers, sliding window, prefix sums.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Linked List</h3>
+        <p class="text-sm text-slate-400">
+          Fast/slow pointers, reversal, cycle detection.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Stack & Queue</h3>
+        <p class="text-sm text-slate-400">
+          Monotonic stack, next greater elements.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Recursion & Backtracking</h3>
+        <p class="text-sm text-slate-400">
+          Subsets, permutations, recursion trees.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Trees & BST</h3>
+        <p class="text-sm text-slate-400">
+          DFS, BFS, diameter, LCA, traversals.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Graphs</h3>
+        <p class="text-sm text-slate-400">
+          BFS, DFS, topological sort, shortest path.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Dynamic Programming</h3>
+        <p class="text-sm text-slate-400">
+          1D, 2D DP, knapsack, LIS patterns.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Greedy</h3>
+        <p class="text-sm text-slate-400">
+          Interval scheduling, optimal decisions.
+        </p>
+      </div>
+
+      <div class="card p-6 rounded-2xl bg-brand-950 border border-slate-800">
+        <h3 class="font-bold text-lg mb-2">Bit Manipulation</h3>
+        <p class="text-sm text-slate-400">
+          XOR tricks, subsets, bit masking.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 text-center">
+  <h2 class="text-4xl font-display font-bold mb-6">
+    Want These Notes + DSA Sheets?
+  </h2>
+  <p class="text-slate-400 mb-10">
+    Unlock complete placement preparation material.
+  </p>
+  <a href="premium-vault.html"
+     class="inline-flex items-center gap-2 px-8 py-4 rounded bg-brand-400 text-brand-950 font-bold text-lg hover:scale-105 transition">
+    Unlock Premium Vault <i data-lucide="arrow-right"></i>
+  </a>
+</section>
+
+<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+  © 2025 CodeStudio
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
