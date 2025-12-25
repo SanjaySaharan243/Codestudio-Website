@@ -380,19 +380,26 @@
                     
                     <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                         <button onclick="signInWithGoogle()"
-                          class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full
-                                flex items-center gap-3 hover:scale-105 transition">
-                          <img src="https://www.svgrepo.com/show/475656/google-color.svg"
-                              class="w-5 h-5" />
-                          Continue with Google
-                        </button>
+                        class="mt-6 px-6 py-3 bg-white text-slate-900 font-bold rounded-full
+                              flex items-center gap-3 hover:scale-105 transition">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg"
+                            class="w-5 h-5" />
+                        Continue with Google
+                      </button>
 
-                        <script src="assets/js/firebase.js"></script>
-                        <script src="assets/js/auth.js"></script>
 
-                        <a href="pages/dsa-practice.html" class="w-full sm:w-auto px-8 py-4 rounded border border-slate-700 text-white font-medium hover:border-brand-400 hover:text-brand-400 transition-colors text-center bg-brand-900/30 backdrop-blur-sm">
-                            Practice DSA
-                        </a>
+                    <!-- Firebase Init -->
+                    <script type="module" src="assets/js/firebase.js"></script>
+
+                    <!-- Auth Logic -->
+                    <script type="module" src="assets/js/auth.js"></script>
+
+                    <!-- Icons -->
+                    <script>
+                      lucide.createIcons();
+                    </script>
+
+
                     </div>
                     
                     <div class="mt-10 flex items-center justify-center lg:justify-start gap-6 text-slate-500 text-sm font-medium">

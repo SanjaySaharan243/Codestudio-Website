@@ -25,7 +25,7 @@ window.signInWithGoogle = async function () {
     });
 
     // redirect after login
-    window.location.href = "pages/dsa-sheets.html";
+    window.location.href = "index.html";
 
   } catch (error) {
     alert("Google Login Failed");
