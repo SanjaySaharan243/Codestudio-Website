@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Computer Networks | CodeStudio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    h1,h2,h3 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #22d3ee;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#020617] text-slate-200">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+                    <a href="../dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+                    <a href="../core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+                    <a href="../system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+                    <a href="../interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+                    <a href="../resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+                    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
+                        Premium Vault
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+<section class="pt-32 pb-20 text-center relative overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute w-[500px] h-[500px] bg-cyan-500/20 blur-3xl rounded-full top-10 left-1/4"></div>
+    <div class="absolute w-[400px] h-[400px] bg-blue-500/20 blur-3xl rounded-full bottom-10 right-1/4"></div>
+  </div>
+
+  <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+    Computer Networks
+  </h1>
+  <p class="mt-4 text-slate-400 max-w-2xl mx-auto text-lg">
+    Complete CN syllabus for interviews — OSI, TCP/IP, Protocols, Security, Troubleshooting & more.
+  </p>
+  <div class="mt-6 flex gap-4 justify-center">
+    <span class="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm">50+ Topics</span>
+    <span class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm">Detailed Examples</span>
+    <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm">Interview Ready</span>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="max-w-7xl mx-auto px-6 pb-24 space-y-8" id="intro">
+
+  <!-- ================= INTRODUCTION TO CN ================= -->
+  <details class="group bg-[#0f172a]/60 backdrop-blur border border-white/10 rounded-xl p-6" open>
+    <summary class="cursor-pointer flex justify-between items-center">
+      <h2 class="text-2xl font-semibold text-cyan-400">Introduction to Computer Networks</h2>
+      <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+    </summary>
+
+    <div class="mt-6 space-y-8">
+
+      <!-- What is Network -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">1. What is a Network?</h3>
+        
+        <p class="text-slate-300 mb-4">
+          A <strong>computer network</strong> is a system of interconnected computing devices that can exchange data and share resources. These devices, called nodes, include computers, servers, switches, routers, and other hardware.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mt-4 mb-2">Key Components:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Nodes:</strong> Devices connected to the network (computers, printers, servers)</li>
+          <li><strong>Links:</strong> Communication pathways (cables, wireless signals)</li>
+          <li><strong>Protocols:</strong> Rules governing communication (TCP/IP, HTTP)</li>
+          <li><strong>Network Interface Card (NIC):</strong> Hardware for network connection</li>
+        </ul>
+
+        <div class="example-box mt-4">
+          <strong class="text-cyan-400">Example:</strong>
+          <p class="mt-2">Your home Wi-Fi network connects your phone, laptop, smart TV, and printer, allowing them to share internet access and print documents wirelessly.</p>
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mt-4 mb-2">Network Advantages:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>Resource sharing (printers, files, internet)</li>
+          <li>Data communication and collaboration</li>
+          <li>Centralized data management</li>
+          <li>Cost efficiency</li>
+          <li>Distributed processing</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+    [Computer A] ─────┐
+                      │
+    [Computer B] ─────┼───── [Switch] ───── [Router] ───── Internet
+                      │
+    [Printer]   ──────┘
+          </pre>
+        </div>
+      </div>
+
+      <!-- Types of Network -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">2. Types of Networks (LAN, WAN, MAN)</h3>
+        
+        <h4 class="text-lg text-white font-semibold mb-3">LAN (Local Area Network)</h4>
+        <p class="text-slate-300 mb-2">
+          A network that connects devices within a limited area such as a home, office, or building.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li><strong>Range:</strong> Up to 1-2 km</li>
+          <li><strong>Speed:</strong> High (10 Mbps to 1 Gbps+)</li>
+          <li><strong>Ownership:</strong> Private</li>
+          <li><strong>Examples:</strong> Office network, home Wi-Fi, computer lab</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">MAN (Metropolitan Area Network)</h4>
+        <p class="text-slate-300 mb-2">
+          A network that spans a city or large campus, connecting multiple LANs.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li><strong>Range:</strong> Up to 50 km (city-wide)</li>
+          <li><strong>Speed:</strong> Moderate to High</li>
+          <li><strong>Examples:</strong> Cable TV networks, city-wide Wi-Fi, university campus network</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">WAN (Wide Area Network)</h4>
+        <p class="text-slate-300 mb-2">
+          A network that covers a large geographical area, connecting multiple LANs and MANs across countries or continents.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li><strong>Range:</strong> Unlimited (worldwide)</li>
+          <li><strong>Speed:</strong> Lower than LAN/MAN</li>
+          <li><strong>Examples:</strong> The Internet, corporate networks, satellite networks</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Other Network Types:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>PAN (Personal Area Network):</strong> Very small range (1-10m), e.g., Bluetooth devices</li>
+          <li><strong>CAN (Campus Area Network):</strong> University or corporate campus</li>
+          <li><strong>SAN (Storage Area Network):</strong> High-speed network for storage devices</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Network Size Comparison:
+
+PAN  →  LAN  →  MAN  →  WAN
+(1m)   (1km)   (50km)  (Unlimited)
+          </pre>
+        </div>
+      </div>
+
+      <!-- Hub, Switch, Router -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">3. Hub, Switch, and Router</h3>
+        
+        <h4 class="text-lg text-white font-semibold mb-3">Hub</h4>
+        <p class="text-slate-300 mb-2">
+          A basic networking device that broadcasts incoming data to all connected devices (ports).
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Works at <strong>Physical Layer</strong> (Layer 1)</li>
+          <li>No intelligence - broadcasts to all ports</li>
+          <li>Half-duplex communication</li>
+          <li>Creates collision domains</li>
+          <li>Obsolete in modern networks</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Switch</h4>
+        <p class="text-slate-300 mb-2">
+          An intelligent device that forwards data only to the intended recipient using MAC addresses.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Works at <strong>Data Link Layer</strong> (Layer 2)</li>
+          <li>Maintains MAC address table</li>
+          <li>Full-duplex communication</li>
+          <li>Reduces collisions</li>
+          <li>More efficient than hubs</li>
+        </ul>
+
+        <div class="code-block mb-4">
+<span class="text-cyan-400"># MAC Address Table Example</span>
+Port 1  →  AA:BB:CC:DD:EE:01
+Port 2  →  AA:BB:CC:DD:EE:02
+Port 3  →  AA:BB:CC:DD:EE:03
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Router</h4>
+        <p class="text-slate-300 mb-2">
+          A device that routes data packets between different networks using IP addresses.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Works at <strong>Network Layer</strong> (Layer 3)</li>
+          <li>Uses routing tables and IP addresses</li>
+          <li>Connects different networks</li>
+          <li>Provides NAT, DHCP, firewall features</li>
+          <li>Makes intelligent routing decisions</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Hub:      [PC1] ←→ [HUB] ←→ [PC2]  (Broadcasts to all)
+                      ↕
+                    [PC3]
+
+Switch:   [PC1] ←→ [SWITCH] ←→ [PC2]  (Targeted delivery)
+                      ↕
+                    [PC3]
+
+Router:   [LAN1] ←→ [ROUTER] ←→ [LAN2]  (Inter-network)
+                      ↕
+                  [Internet]
+          </pre>
+        </div>
+
+        <div class="note-box mt-4">
+          <strong class="text-yellow-400">Key Difference:</strong>
+          <p class="mt-2">Hub = Dumb device, Switch = Smart within network, Router = Smart between networks</p>
+        </div>
+      </div>
+
+      <!-- Network Topology -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">4. Network Topology and its Types</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Network topology refers to the physical or logical arrangement of nodes and connections in a network.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">1. Bus Topology</h4>
+        <p class="text-slate-300 mb-2">All devices connect to a single central cable (backbone).</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Advantages:</strong> Easy to install, cost-effective</li>
+          <li><strong>Disadvantages:</strong> Single point of failure, limited cable length, difficult troubleshooting</li>
+        </ul>
+        <div class="diagram-box mt-2 mb-4">
+          <pre class="text-left text-sm text-slate-300">
+[PC1]───[PC2]───[PC3]───[PC4]  (Connected to backbone)
+          </pre>
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">2. Star Topology</h4>
+        <p class="text-slate-300 mb-2">All devices connect to a central hub or switch.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Advantages:</strong> Easy to add devices, centralized management, fault isolation</li>
+          <li><strong>Disadvantages:</strong> Hub failure affects entire network, more cabling required</li>
+        </ul>
+        <div class="diagram-box mt-2 mb-4">
+          <pre class="text-left text-sm text-slate-300">
+        [PC1]
+          |
+[PC2]──[HUB]──[PC3]
+          |
+        [PC4]
+          </pre>
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">3. Ring Topology</h4>
+        <p class="text-slate-300 mb-2">Devices connect in a circular fashion, data travels in one direction.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Advantages:</strong> Equal access, no collisions</li>
+          <li><strong>Disadvantages:</strong> Single break disrupts network, difficult to add/remove devices</li>
+        </ul>
+        <div class="diagram-box mt-2 mb-4">
+          <pre class="text-left text-sm text-slate-300">
+    [PC1] → [PC2]
+      ↑       ↓
+    [PC4] ← [PC3]
+          </pre>
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">4. Mesh Topology</h4>
+        <p class="text-slate-300 mb-2">Every device connects to every other device.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Advantages:</strong> High redundancy, fault tolerance, multiple data paths</li>
+          <li><strong>Disadvantages:</strong> Expensive, complex installation</li>
+          <li><strong>Formula:</strong> n(n-1)/2 connections for n devices</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3 mt-4">5. Tree Topology</h4>
+        <p class="text-slate-300 mb-2">Hierarchical structure combining star and bus topologies.</p>
+
+        <h4 class="text-lg text-white font-semibold mb-3 mt-4">6. Hybrid Topology</h4>
+        <p class="text-slate-300 mb-2">Combination of two or more topologies.</p>
+      </div>
+
+      <!-- Nodes and Links -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">5. Nodes and Links</h3>
+        
+        <h4 class="text-lg text-white font-semibold mb-3">Nodes</h4>
+        <p class="text-slate-300 mb-2">
+          A node is any device connected to a network that can send, receive, or forward data.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li><strong>End nodes:</strong> Computers, smartphones, printers</li>
+          <li><strong>Intermediate nodes:</strong> Routers, switches, gateways</li>
+          <li>Each node has a unique address (IP, MAC)</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Links</h4>
+        <p class="text-slate-300 mb-2">
+          A link is the communication pathway between two nodes.
+        </p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Wired Links:</strong> Ethernet cables, fiber optics</li>
+          <li><strong>Wireless Links:</strong> Wi-Fi, Bluetooth, satellite</li>
+          <li><strong>Point-to-Point:</strong> Direct connection between two nodes</li>
+          <li><strong>Multipoint:</strong> Multiple nodes share the same link</li>
+        </ul>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- ================= OSI MODEL ================= -->
+  <details class="group bg-[#0f172a]/60 backdrop-blur border border-white/10 rounded-xl p-6" id="osi">
+    <summary class="cursor-pointer flex justify-between items-center">
+      <h2 class="text-2xl font-semibold text-cyan-400">OSI Model</h2>
+      <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+    </summary>
+
+    <div class="mt-6 space-y-8">
+
+      <!-- OSI Overview -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">OSI Model Overview</h3>
+        
+        <p class="text-slate-300 mb-4">
+          The <strong>OSI (Open Systems Interconnection)</strong> model is a conceptual framework that standardizes the functions of a communication system into seven distinct layers. Developed by ISO in 1984.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Purpose:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>Standardize networking protocols</li>
+          <li>Enable interoperability between different systems</li>
+          <li>Simplify troubleshooting by isolating problems to specific layers</li>
+          <li>Facilitate modular design and development</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Layer 7: Application  ←  User Interaction
+Layer 6: Presentation ←  Data Format/Encryption
+Layer 5: Session      ←  Connection Management
+Layer 4: Transport    ←  End-to-End Communication
+Layer 3: Network      ←  Routing
+Layer 2: Data Link    ←  Node-to-Node Transfer
+Layer 1: Physical     ←  Bits Transmission
+          </pre>
+        </div>
+
+        <div class="note-box mt-4">
+          <strong class="text-yellow-400">Mnemonic:</strong>
+          <p class="mt-2"><strong>A</strong>ll <strong>P</strong>eople <strong>S</strong>eem <strong>T</strong>o <strong>N</strong>eed <strong>D</strong>ata <strong>P</strong>rocessing</p>
+        </div>
+      </div>
+
+      <!-- Layers of OSI -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Layers of OSI Model</h3>
+        
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 1: Physical Layer</h4>
+        <p class="text-slate-300 mb-2">Deals with the physical connection and raw bit transmission.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Functions:</strong> Bit synchronization, transmission mode, topology</li>
+          <li><strong>Devices:</strong> Hub, Repeater, Cables, NIC</li>
+          <li><strong>Data Unit:</strong> Bits</li>
+          <li><strong>Protocols:</strong> Ethernet physical layer, USB, Bluetooth physical</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 2: Data Link Layer</h4>
+        <p class="text-slate-300 mb-2">Provides node-to-node data transfer and error detection.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Functions:</strong> Framing, MAC addressing, error detection, flow control</li>
+          <li><strong>Sub-layers:</strong> LLC (Logical Link Control), MAC (Media Access Control)</li>
+          <li><strong>Devices:</strong> Switch, Bridge</li>
+          <li><strong>Data Unit:</strong> Frames</li>
+          <li><strong>Protocols:</strong> Ethernet, PPP, HDLC</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 3: Network Layer</h4>
+        <p class="text-slate-300 mb-2">Handles routing and forwarding of data packets.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Functions:</strong> Logical addressing (IP), routing, packet forwarding</li>
+          <li><strong>Devices:</strong> Router, Layer 3 Switch</li>
+          <li><strong>Data Unit:</strong> Packets</li>
+          <li><strong>Protocols:</strong> IP, ICMP, ARP, OSPF, BGP</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 4: Transport Layer</h4>
+        <p class="text-slate-300 mb-2">Provides end-to-end communication and reliability.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Functions:</strong> Segmentation, flow control, error control, port addressing</li>
+          <li><strong>Data Unit:</strong> Segments (TCP) / Datagrams (UDP)</li>
+          <li><strong>Protocols:</strong> TCP, UDP, SCTP</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 5: Session Layer</h4>
+        <p class="text-slate-300 mb-2">Manages sessions between applications.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Functions:</strong> Session establishment, maintenance, termination, synchronization</li>
+          <li><strong>Protocols:</strong> NetBIOS, RPC, PPTP</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 6: Presentation Layer</h4>
+        <p class="text-slate-300 mb-2">Translates data formats and handles encryption.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Functions:</strong> Data translation, encryption/decryption, compression</li>
+          <li><strong>Formats:</strong> JPEG, MPEG, ASCII, EBCDIC</li>
+          <li><strong>Protocols:</strong> SSL/TLS, MIME</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">Layer 7: Application Layer</h4>
+        <p class="text-slate-300 mb-2">Provides network services to end-user applications.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Functions:</strong> User interface, application services</li>
+          <li><strong>Protocols:</strong> HTTP, FTP, SMTP, DNS, DHCP, Telnet</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Data Flow Through OSI Layers:
+
+Sender                          Receiver
+Application → Data           → Application
+Presentation → Data          → Presentation
+Session → Data               → Session
+Transport → Segments         → Transport
+Network → Packets            → Network
+Data Link → Frames           → Data Link
+Physical → Bits ············→ Physical
+          </pre>
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+       <!-- ================= TCP/IP MODEL ================= -->
+  <details class="group bg-[#0f172a]/60 backdrop-blur border border-white/10 rounded-xl p-6">
+    <summary class="cursor-pointer flex justify-between items-center">
+      <h2 class="text-2xl font-semibold text-cyan-400">TCP/IP Model</h2>
+      <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+    </summary>
+
+    <div class="mt-6 space-y-8">
+
+      <!-- TCP/IP Protocol Suite -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">TCP/IP Protocol Suite</h3>
+        
+        <p class="text-slate-300 mb-4">
+          The <strong>TCP/IP (Transmission Control Protocol/Internet Protocol)</strong> model is a practical protocol suite used for Internet communication. Developed by DARPA in the 1970s.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Key Features:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>Based on real-world implementation</li>
+          <li>Standard protocol for the Internet</li>
+          <li>Platform-independent</li>
+          <li>Scalable architecture</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+TCP/IP Model (4 Layers):
+
+Application Layer    ← HTTP, FTP, DNS, SMTP
+Transport Layer      ← TCP, UDP
+Internet Layer       ← IP, ICMP, ARP
+Network Access Layer ← Ethernet, Wi-Fi
+          </pre>
+        </div>
+      </div>
+
+      <!-- Different Layers -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Different Layers of TCP/IP Model</h3>
+        
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">1. Network Access Layer</h4>
+        <p class="text-slate-300 mb-2">Combines Physical and Data Link layers of OSI.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Handles hardware addressing and physical transmission</li>
+          <li><strong>Protocols:</strong> Ethernet, Wi-Fi, PPP</li>
+          <li>Responsible for framing and MAC addressing</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">2. Internet Layer</h4>
+        <p class="text-slate-300 mb-2">Handles logical addressing and routing (equivalent to OSI Network layer).</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li><strong>Main Protocol:</strong> IP (Internet Protocol)</li>
+          <li><strong>Supporting Protocols:</strong> ICMP, ARP, IGMP</li>
+          <li>Provides connectionless service</li>
+          <li>Handles packet fragmentation and reassembly</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">3. Transport Layer</h4>
+        <p class="text-slate-300 mb-2">Provides end-to-end communication.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li><strong>TCP:</strong> Connection-oriented, reliable</li>
+          <li><strong>UDP:</strong> Connectionless, fast</li>
+          <li>Port-based addressing (0-65535)</li>
+          <li>Flow control and error handling (TCP)</li>
+        </ul>
+
+        <h4 class="text-lg text-cyan-300 font-semibold mb-3">4. Application Layer</h4>
+        <p class="text-slate-300 mb-2">Combines Session, Presentation, and Application layers of OSI.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Protocols:</strong> HTTP, HTTPS, FTP, SMTP, DNS, DHCP</li>
+          <li>Provides network services to applications</li>
+          <li>User interface and data formatting</li>
+        </ul>
+      </div>
+
+      <!-- OSI vs TCP/IP -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Difference between OSI and TCP/IP Model</h3>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-slate-300 text-sm">
+            <thead class="bg-cyan-900/30">
+              <tr>
+                <th class="p-3">Aspect</th>
+                <th class="p-3">OSI Model</th>
+                <th class="p-3">TCP/IP Model</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10">
+              <tr>
+                <td class="p-3 font-semibold">Layers</td>
+                <td class="p-3">7 layers</td>
+                <td class="p-3">4 layers</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Development</td>
+                <td class="p-3">Theoretical (ISO)</td>
+                <td class="p-3">Practical (DARPA)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Usage</td>
+                <td class="p-3">Reference model</td>
+                <td class="p-3">Implementation model</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Protocol</td>
+                <td class="p-3">Protocol independent</td>
+                <td class="p-3">Protocol dependent</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Reliability</td>
+                <td class="p-3">More reliable</td>
+                <td class="p-3">Less reliable</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Connection</td>
+                <td class="p-3">Both connection-oriented and connectionless</td>
+                <td class="p-3">Supports both</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+OSI Model          TCP/IP Model
+
+Application   ┐
+Presentation  ├──→ Application
+Session       ┘
+Transport     ────→ Transport
+Network       ────→ Internet
+Data Link     ┐
+Physical      └───→ Network Access
+          </pre>
+        </div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- ================= PHYSICAL LAYER ================= -->
+  <details class="group bg-[#0f172a]/60 backdrop-blur border border-white/10 rounded-xl p-6" id="layers">
+    <summary class="cursor-pointer flex justify-between items-center">
+      <h2 class="text-2xl font-semibold text-cyan-400">Physical Layer</h2>
+      <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+    </summary>
+
+    <div class="mt-6 space-y-8">
+
+      <!-- Data Transmission -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Data Transmission</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Data transmission is the process of sending digital or analog data over a communication channel.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Types of Data Transmission:</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Serial Transmission</h5>
+        <p class="text-slate-300 mb-2">Data is sent one bit at a time over a single channel.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Advantages:</strong> Cost-effective, long-distance</li>
+          <li><strong>Disadvantages:</strong> Slower speed</li>
+          <li><strong>Examples:</strong> USB, SATA</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Parallel Transmission</h5>
+        <p class="text-slate-300 mb-2">Multiple bits sent simultaneously over multiple channels.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Advantages:</strong> Faster speed</li>
+          <li><strong>Disadvantages:</strong> Expensive, short-distance, crosstalk</li>
+          <li><strong>Examples:</strong> Old printer cables</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Transmission Modes:</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Simplex</h5>
+        <p class="text-slate-300 mb-2">One-way communication only.</p>
+        <p class="text-slate-400 text-sm mb-3">Example: TV broadcast, keyboard to computer</p>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Half-Duplex</h5>
+        <p class="text-slate-300 mb-2">Two-way communication, but not simultaneous.</p>
+        <p class="text-slate-400 text-sm mb-3">Example: Walkie-talkie</p>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">3. Full-Duplex</h5>
+        <p class="text-slate-300 mb-2">Simultaneous two-way communication.</p>
+        <p class="text-slate-400 text-sm">Example: Telephone, modern Ethernet</p>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Simplex:      A ─────────→ B
+
+Half-Duplex:  A ←────────→ B  (not at same time)
+
+Full-Duplex:  A ⇄⇄⇄⇄⇄⇄⇄→ B  (simultaneous)
+          </pre>
+        </div>
+      </div>
+
+      <!-- Bandwidth -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Bandwidth</h3>
+        
+        <p class="text-slate-300 mb-4">
+          <strong>Bandwidth</strong> is the maximum rate of data transfer across a given path, measured in bits per second (bps).
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Key Concepts:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Analog Bandwidth:</strong> Range of frequencies (Hz)</li>
+          <li><strong>Digital Bandwidth:</strong> Data transfer rate (bps, Mbps, Gbps)</li>
+          <li><strong>Throughput:</strong> Actual data transferred (always ≤ bandwidth)</li>
+          <li><strong>Latency:</strong> Time delay in data transmission</li>
+        </ul>
+
+        <div class="code-block mt-4">
+<span class="text-cyan-400"># Bandwidth Units</span>
+1 Kbps = 1,000 bps
+1 Mbps = 1,000 Kbps = 1,000,000 bps
+1 Gbps = 1,000 Mbps = 1,000,000,000 bps
+
+<span class="text-cyan-400"># Example Calculation</span>
+File Size = 10 MB = 10 × 8 = 80 Mb
+Bandwidth = 8 Mbps
+Time = 80 Mb / 8 Mbps = 10 seconds
+        </div>
+
+        <div class="example-box mt-4">
+          <strong class="text-cyan-400">Real-World Example:</strong>
+          <p class="mt-2">If your internet plan offers 100 Mbps bandwidth, you can theoretically download 12.5 MB per second (100/8)</p>
+        </div>
+      </div>
+
+      <!-- Transmission Media -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Transmission Media and Wireless Transmission</h3>
+        
+        <h4 class="text-lg text-white font-semibold mb-3">Guided Media (Wired)</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Twisted Pair Cable</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>UTP (Unshielded):</strong> Common in LANs, Cat5e, Cat6</li>
+          <li><strong>STP (Shielded):</strong> Reduced interference</li>
+          <li><strong>Range:</strong> Up to 100m</li>
+          <li><strong>Speed:</strong> 10 Mbps to 10 Gbps</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Coaxial Cable</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li>Better shielding than twisted pair</li>
+          <li>Used in cable TV and older Ethernet</li>
+          <li><strong>Speed:</strong> Up to 10 Mbps</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">3. Fiber Optic Cable</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Uses light signals, immune to EMI</li>
+          <li><strong>Single-mode:</strong> Long distance (100+ km)</li>
+          <li><strong>Multi-mode:</strong> Short distance (2 km)</li>
+          <li><strong>Speed:</strong> 10 Gbps to 100 Gbps+</li>
+          <li>Most expensive but fastest</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Unguided Media (Wireless)</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Radio Waves</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Frequency:</strong> 3 KHz to 1 GHz</li>
+          <li>Omnidirectional, penetrates walls</li>
+          <li><strong>Example:</strong> AM/FM radio, Wi-Fi</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Microwaves</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Frequency:</strong> 1 GHz to 300 GHz</li>
+          <li>Line-of-sight transmission</li>
+          <li><strong>Example:</strong> Satellite, cellular networks</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">3. Infrared</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li>Short-range, line-of-sight</li>
+          <li><strong>Example:</strong> TV remote, IrDA</li>
+        </ul>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- ================= DATA LINK LAYER ================= -->
+  <details class="group bg-[#0f172a]/60 backdrop-blur border border-white/10 rounded-xl p-6">
+    <summary class="cursor-pointer flex justify-between items-center">
+      <h2 class="text-2xl font-semibold text-cyan-400">Data Link Layer</h2>
+      <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+    </summary>
+
+    <div class="mt-6 space-y-8">
+
+      <!-- What is Data Link Layer -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Data Link Layer and Its Functions</h3>
+        
+        <p class="text-slate-300 mb-4">
+          The Data Link Layer is the second layer of the OSI model, responsible for node-to-node data transfer and error detection/correction.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Key Functions:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Framing:</strong> Dividing data into frames with headers and trailers</li>
+          <li><strong>Physical Addressing:</strong> Adding MAC addresses to frames</li>
+          <li><strong>Error Detection:</strong> Using CRC, checksums</li>
+          <li><strong>Error Correction:</strong> Retransmission of corrupted frames</li>
+          <li><strong>Flow Control:</strong> Preventing buffer overflow</li>
+          <li><strong>Access Control:</strong> Determining which device has control over the link</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3 mt-4">Sub-layers:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>LLC (Logical Link Control):</strong> Error control, flow control</li>
+          <li><strong>MAC (Media Access Control):</strong> Channel access, addressing</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Frame Structure:
+
+┌─────────┬─────────┬──────────┬──────┬─────────┐
+│ Preamble│ Dest MAC│ Source MAC│ Data │   CRC   │
+├─────────┼─────────┼──────────┼──────┼─────────┤
+│  7 bytes│ 6 bytes │  6 bytes │ Variable│4 bytes│
+└─────────┴─────────┴──────────┴──────┴─────────┘
+          </pre>
+        </div>
+      </div>
+
+      <!-- Error Detection and Correction -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Error Detection and Correction</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Errors occur during data transmission due to noise, interference, or hardware issues. Detection and correction mechanisms ensure data integrity.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Error Detection Methods:</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Parity Check</h5>
+        <p class="text-slate-300 mb-2">Adds a parity bit to make the total number of 1s even or odd.</p>
+        <div class="code-block mb-3">
+<span class="text-cyan-400"># Even Parity Example</span>
+Data: 1010101 (four 1s - even)
+Parity bit: 0
+Transmitted: 10101010
+
+Data: 1011101 (five 1s - odd)
+Parity bit: 1
+Transmitted: 10111011
+        </div>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Checksum</h5>
+        <p class="text-slate-300 mb-2">Sum of all data segments is sent with data. Receiver recalculates and compares.</p>
+        <div class="code-block mb-3">
+<span class="text-cyan-400"># Checksum Example</span>
+Data segments: 10101010, 11001100, 10110011
+Sum: 101110001
+Checksum: 01110001 (sent with data)
+        </div>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">3. CRC (Cyclic Redundancy Check)</h5>
+        <p class="text-slate-300 mb-2">Most powerful error detection method using polynomial division.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li>Detects burst errors effectively</li>
+          <li>Used in Ethernet, Wi-Fi</li>
+          <li>CRC-32 is common (32-bit checksum)</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Error Correction Methods:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Hamming Code:</strong> Can detect and correct single-bit errors</li>
+          <li><strong>Reed-Solomon:</strong> Used in CDs, DVDs, QR codes</li>
+          <li><strong>ARQ (Automatic Repeat Request):</strong> Retransmission-based</li>
+        </ul>
+
+        <div class="note-box mt-4">
+          <strong class="text-yellow-400">Note:</strong>
+          <p class="mt-2">Error detection is cheaper than correction. Modern networks typically use detection + retransmission.</p>
+        </div>
+      </div>
+
+      <!-- Data Link Protocols -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Data Link Protocols</h3>
+        
+        <h4 class="text-lg text-white font-semibold mb-3">1. Stop-and-Wait Protocol</h4>
+        <p class="text-slate-300 mb-2">Sender sends one frame and waits for acknowledgment before sending the next.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Advantages:</strong> Simple, error-free</li>
+          <li><strong>Disadvantages:</strong> Inefficient, low throughput</li>
+        </ul>
+
+        <div class="diagram-box mb-4">
+          <pre class="text-left text-sm text-slate-300">
+Sender          Receiver
+  │─── Frame 1 ──→│
+  │←─── ACK 1 ────│
+  │─── Frame 2 ──→│
+  │←─── ACK 2 ────│
+          </pre>
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">2. Sliding Window Protocol</h4>
+        <p class="text-slate-300 mb-2">Multiple frames can be sent before receiving acknowledgment.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Go-Back-N:</strong> Retransmit from error frame</li>
+          <li><strong>Selective Repeat:</strong> Retransmit only error frames</li>
+          <li>Window size determines efficiency</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">3. HDLC (High-Level Data Link Control)</h4>
+        <p class="text-slate-300 mb-2">Bit-oriented protocol for point-to-point and multipoint communications.</p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">4. PPP (Point-to-Point Protocol)</h4>
+        <p class="text-slate-300 mb-2">Used for direct connection between two nodes (e.g., dial-up, DSL).</p>
+      </div>
+
+      <!-- Multiple Access Protocols -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Multiple Access Protocols</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Protocols that determine how multiple devices share a common communication channel.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">1. ALOHA</h4>
+        <p class="text-slate-300 mb-2">Simple random access protocol.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Pure ALOHA:</strong> Transmit anytime, 18% efficiency</li>
+          <li><strong>Slotted ALOHA:</strong> Transmit at time slots, 37% efficiency</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">2. CSMA (Carrier Sense Multiple Access)</h4>
+        <p class="text-slate-300 mb-2">Listens before transmitting to avoid collisions.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>CSMA/CD:</strong> Collision Detection (Ethernet)</li>
+          <li><strong>CSMA/CA:</strong> Collision Avoidance (Wi-Fi)</li>
+        </ul>
+
+        <div class="code-block mb-3">
+<span class="text-cyan-400"># CSMA/CD Algorithm</span>
+1. Listen to the channel
+2. If idle, transmit
+3. If collision detected, stop
+4. Wait random time (backoff)
+5. Retry transmission
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">3. Token Passing</h4>
+        <p class="text-slate-300 mb-2">A token circulates; only the holder can transmit.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li>Used in Token Ring, FDDI</li>
+          <li>No collisions, deterministic</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">4. Polling</h4>
+        <p class="text-slate-300 mb-2">Master device polls each slave to check if it has data to send.</p>
+      </div>
+
+      <!-- MAC Address -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">MAC Address</h3>
+        
+        <p class="text-slate-300 mb-4">
+          <strong>MAC (Media Access Control) Address</strong> is a unique 48-bit hardware identifier assigned to network interfaces.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Format:</h4>
+        <div class="code-block mb-4">
+<span class="text-cyan-400"># MAC Address Format (48 bits = 6 bytes)</span>
+Example: 00:1A:2B:3C:4D:5E
+
+First 3 bytes (OUI): Manufacturer ID
+Last 3 bytes: Device ID
+
+Binary: 00000000-00011010-00101011-00111100-01001101-01011110
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Characteristics:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>Globally unique (assigned by IEEE)</li>
+          <li>Burned into NIC hardware (ROM)</li>
+          <li>Used in Layer 2 (Data Link Layer)</li>
+          <li>Cannot be changed (but can be spoofed)</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Types:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Unicast:</strong> One-to-one (starts with even number)</li>
+          <li><strong>Multicast:</strong> One-to-group (starts with odd number)</li>
+          <li><strong>Broadcast:</strong> FF:FF:FF:FF:FF:FF (all devices)</li>
+        </ul>
+
+        <div class="example-box mt-4">
+          <strong class="text-cyan-400">Finding Your MAC Address:</strong>
+          <div class="code-block mt-2">
+<span class="text-cyan-400"># Windows</span>
+ipconfig /all
+
+<span class="text-cyan-400"># Linux/Mac</span>
+ifconfig
+ip link show
+          </div>
+        </div>
+      </div>
+
+      <!-- Channel Allocation -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Channel Allocation Problem</h3>
+        
+        <p class="text-slate-300 mb-4">
+          The problem of efficiently allocating a single communication channel among multiple competing users.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Static Allocation:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2 mb-4">
+          <li><strong>FDM (Frequency Division Multiplexing):</strong> Divide frequency spectrum</li>
+          <li><strong>TDM (Time Division Multiplexing):</strong> Divide time into slots</li>
+          <li>Fixed allocation, inefficient for bursty traffic</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Dynamic Allocation:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>ALOHA, CSMA, Token passing</li>
+          <li>Adapts to traffic demands</li>
+          <li>More efficient for variable traffic</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+FDM (Frequency Division):
+User 1 ▓▓▓▓▓▓
+User 2 ▓▓▓▓▓▓
+User 3 ▓▓▓▓▓▓
+       ────────→ Time
+
+TDM (Time Division):
+User 1  User 2  User 3  User 1  User 2
+│▓▓▓│  │▓▓▓│  │▓▓▓│  │▓▓▓│  │▓▓▓│
+────────────────────────────────→ Time
+          </pre>
+        </div>
+      </div>
+
+      <!-- Data Link Layer Switching -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Data Link Layer Switching</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Switching is the process of forwarding frames from source to destination using MAC addresses.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Switch Learning Process:</h4>
+        <ol class="list-decimal ml-6 text-slate-300 space-y-2 mb-4">
+          <li>Receive frame on a port</li>
+          <li>Learn source MAC address and associate with port</li>
+          <li>Check destination MAC in table</li>
+          <li>Forward to appropriate port or flood if unknown</li>
+        </ol>
+
+        <div class="code-block mb-4">
+<span class="text-cyan-400"># Switch MAC Address Table</span>
+MAC Address         Port    Age
+─────────────────────────────────
+AA:BB:CC:DD:EE:01   1       30s
+AA:BB:CC:DD:EE:02   2       45s
+AA:BB:CC:DD:EE:03   3       15s
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Switching Methods:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Store-and-Forward:</strong> Receives entire frame, checks errors, then forwards</li>
+          <li><strong>Cut-Through:</strong> Starts forwarding as soon as destination is read</li>
+          <li><strong>Fragment-Free:</strong> Reads first 64 bytes to avoid collision fragments</li>
+        </ul>
+      </div>
+
+      <!-- Ethernet LANs -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Ethernet LANs</h3>
+        
+        <p class="text-slate-300 mb-4">
+          <strong>Ethernet</strong> is the most widely used LAN technology, defined by IEEE 802.3 standard.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Ethernet Standards:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2 mb-4">
+          <li><strong>10BASE-T:</strong> 10 Mbps over twisted pair</li>
+          <li><strong>100BASE-TX (Fast Ethernet):</strong> 100 Mbps</li>
+          <li><strong>1000BASE-T (Gigabit Ethernet):</strong> 1 Gbps</li>
+          <li><strong>10GBASE-T:</strong> 10 Gbps</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Ethernet Frame Format:</h4>
+        <div class="diagram-box mb-4">
+          <pre class="text-left text-sm text-slate-300">
+┌──────────┬──────────┬──────────┬──────┬─────┬─────┐
+│ Preamble │ Dest MAC │ Src MAC  │ Type │Data │ FCS │
+├──────────┼──────────┼──────────┼──────┼─────┼─────┤
+│ 7 bytes  │ 6 bytes  │ 6 bytes  │2 bytes│46-1500│4 bytes│
+└──────────┴──────────┴──────────┴──────┴─────┴─────┘
+          </pre>
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Features:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>CSMA/CD for collision detection (in half-duplex)</li>
+          <li>Modern Ethernet uses full-duplex with switches</li>
+          <li>Auto-negotiation for speed and duplex</li>
+          <li>Minimum frame size: 64 bytes</li>
+          <li>Maximum frame size: 1518 bytes (standard), 9000 bytes (jumbo frames)</li>
+        </ul>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- ================= NETWORK LAYER ================= -->
+  <details class="group bg-[#0f172a]/60 backdrop-blur border border-white/10 rounded-xl p-6">
+    <summary class="cursor-pointer flex justify-between items-center">
+      <h2 class="text-2xl font-semibold text-cyan-400">Network Layer</h2>
+      <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+    </summary>
+
+    <div class="mt-6 space-y-8">
+
+      <!-- Routing Algorithms -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Routing Algorithms</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Routing algorithms determine the best path for data packets to travel from source to destination.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Classification:</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Static Routing</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li>Routes manually configured by administrator</li>
+          <li>Does not adapt to network changes</li>
+          <li>Simple, predictable, no overhead</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Dynamic Routing</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Routes automatically updated based on network conditions</li>
+          <li>Adapts to failures and congestion</li>
+          <li>Complex but flexible</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Routing Algorithms:</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Distance Vector Routing</h5>
+        <p class="text-slate-300 mb-2">Each router maintains a table (vector) of best distances to all destinations.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Algorithm:</strong> Bellman-Ford</li>
+          <li><strong>Protocols:</strong> RIP (Routing Information Protocol)</li>
+          <li><strong>Metric:</strong> Hop count</li>
+          <li><strong>Issues:</strong> Count-to-infinity problem, slow convergence</li>
+        </ul>
+
+        <div class="code-block mb-4">
+<span class="text-cyan-400"># Distance Vector Example</span>
+Router A's table:
+Destination    Distance    Next Hop
+────────────────────────────────────
+B              1           B
+C              2           B
+D              3           B
+        </div>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Link State Routing</h5>
+        <p class="text-slate-300 mb-2">Each router has complete topology map and calculates shortest paths.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li><strong>Algorithm:</strong> Dijkstra's shortest path</li>
+          <li><strong>Protocols:</strong> OSPF, IS-IS</li>
+          <li>Faster convergence than distance vector</li>
+          <li>More memory and CPU intensive</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">3. Path Vector Routing</h5>
+        <p class="text-slate-300 mb-2">Used for inter-domain routing between autonomous systems.</p>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1">
+          <li><strong>Protocol:</strong> BGP (Border Gateway Protocol)</li>
+          <li>Avoids routing loops by keeping full path</li>
+        </ul>
+      </div>
+
+      <!-- Congestion Control -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">Congestion Control Algorithms</h3>
+        
+        <p class="text-slate-300 mb-4">
+          Congestion occurs when network demand exceeds capacity, leading to packet delays and losses.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Congestion Control Approaches:</h4>
+        
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">1. Open Loop (Prevention)</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-3">
+          <li>Design policies to prevent congestion</li>
+          <li>Admission control, resource reservation</li>
+          <li>Traffic shaping and policing</li>
+        </ul>
+
+        <h5 class="text-md text-cyan-300 font-semibold mb-2">2. Closed Loop (Recovery)</h5>
+        <ul class="list-disc ml-6 text-slate-300 space-y-1 mb-4">
+          <li>Monitor network, detect congestion, adjust</li>
+          <li>Feedback mechanisms</li>
+          <li>Dynamic rate adjustment</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Techniques:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li><strong>Leaky Bucket:</strong> Smooths bursty traffic at constant rate</li>
+          <li><strong>Token Bucket:</strong> Allows bursts while maintaining average rate</li>
+          <li><strong>RED (Random Early Detection):</strong> Drops packets before queue is full</li>
+          <li><strong>ECN (Explicit Congestion Notification):</strong> Marks packets instead of dropping</li>
+        </ul>
+
+        <div class="diagram-box mt-4">
+          <pre class="text-left text-sm text-slate-300">
+Leaky Bucket:
+   Input (bursty)
+       ↓
+    ┌─────┐
+    │▓▓▓▓▓│ ← Bucket
+    └──┬──┘
+       ↓ Constant rate
+     Output
+          </pre>
+        </div>
+      </div>
+
+      <!-- IP Addressing -->
+      <div class="topic-card">
+        <h3 class="text-xl text-cyan-300 font-semibold mb-4">IP Addressing and Subnetting</h3>
+        
+        <p class="text-slate-300 mb-4">
+          <strong>IP Address</strong> is a logical address that identifies a device on a network.
+        </p>
+
+        <h4 class="text-lg text-white font-semibold mb-3">IPv4 Address Structure:</h4>
+        <div class="code-block mb-4">
+<span class="text-cyan-400"># IPv4 Format (32 bits = 4 octets)</span>
+Example: 192.168.1.100
+
+Binary: 11000000.10101000.00000001.01100100
+
+Total addresses: 2^32 = 4,294,967,296
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">IP Address Classes:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2 mb-4">
+          <li><strong>Class A:</strong> 1.0.0.0 to 126.0.0.0 (Large networks, /8)</li>
+          <li><strong>Class B:</strong> 128.0.0.0 to 191.255.0.0 (Medium networks, /16)</li>
+          <li><strong>Class C:</strong> 192.0.0.0 to 223.255.255.0 (Small networks, /24)</li>
+          <li><strong>Class D:</strong> 224.0.0.0 to 239.255.255.255 (Multicast)</li>
+          <li><strong>Class E:</strong> 240.0.0.0 to 255.255.255.255 (Reserved)</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Special IP Addresses:</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2 mb-4">
+          <li><strong>127.0.0.1:</strong> Loopback (localhost)</li>
+          <li><strong>0.0.0.0:</strong> Default route</li>
+          <li><strong>255.255.255.255:</strong> Broadcast</li>
+          <li><strong>Private IPs:</strong> 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16</li>
+        </ul>
+
+        <h4 class="text-lg text-white font-semibold mb-3">Subnetting:</h4>
+        <p class="text-slate-300 mb-2">
+          Dividing a network into smaller sub-networks for better management and security.
+        </p>
+
+        <div class="code-block mb-4">
+<span class="text-cyan-400"># Subnetting Example</span>
+Network: 192.168.1.0/24
+Subnet Mask: 255.255.255.0
+
+Dividing into 4 subnets (/26):
+Subnet 1: 192.168.1.0/26   (0-63)
+Subnet 2: 192.168.1.64/26  (64-127)
+Subnet 3: 192.168.1.128/26 (128-191)
+Subnet 4: 192.168.1.192/26 (192-255)
+
+Each subnet has 64 addresses (62 usable)
+        </div>
+
+        <h4 class="text-lg text-white font-semibold mb-3">CIDR (Classless Inter-Domain Routing):</h4>
+        <ul class="list-disc ml-6 text-slate-300 space-y-2">
+          <li>Replaces classful addressing</li>
+          <li>Variable-length subnet masking</li>
+          <li>More efficient IP allocation</li>
+          <li>Notation: 192.168.1.0/24 (/24 = 24 network bits)</li>
+        </ul>
+      </div>
+
+      <!-- IPv4 and IPv6 -->
+      <div class="topic-card">
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-white/10 bg-[#0f172a]/60 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-6 py-6 text-center text-slate-400 text-sm">
+    © 2025 CodeStudio — Crack Interviews with Confidence
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

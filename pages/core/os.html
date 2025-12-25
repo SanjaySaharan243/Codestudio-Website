@@ -1,33 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Operating Systems | CodeStudio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#020617',
+            panel: 'rgba(15,23,42,0.6)',
+            neon: '#22d3ee'
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-thumb {
+      background: #22d3ee;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
-<body class="bg-slate-950 text-slate-200">
+<body class="bg-bg text-slate-200 font-body overflow-x-hidden">
 
-<!-- NAVBAR (SAME) -->
-<nav class="fixed top-0 w-full z-50 border-b border-slate-800 bg-slate-950/90">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center">
-    <a href="../core-cs.html" class="text-brand-400 font-bold">← Back to Core CS</a>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-panel border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-heading font-bold text-neon">CodeStudio</h1>
+    <div class="hidden md:flex gap-6 text-sm">
+      <a href="../../index.html" class="hover:text-neon">Home</a>
+      <a href="../dsa-practice.html" class="hover:text-neon">DSA</a>
+      <a href="../core-cs.html" class="text-neon">Core CS</a>
+      <a href="../resources.html" class="hover:text-neon">Resources</a>
+    </div>
+    <a href="../premium-vault.html" class="px-4 py-2 rounded-lg bg-neon text-black font-semibold hover:scale-105 transition">
+      Premium
+    </a>
   </div>
 </nav>
 
-<div class="max-w-5xl mx-auto px-4 pt-28 pb-20">
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-20 relative overflow-hidden">
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-neon/20 blur-3xl rounded-full"></div>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <h2 class="text-4xl md:text-5xl font-heading font-bold leading-tight">
+      Operating Systems  
+      <span class="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        Complete Interview Guide
+      </span>
+    </h2>
+    <p class="mt-4 max-w-2xl text-slate-400">
+      Master processes, memory, scheduling, deadlocks, file systems, and OS internals — explained for interviews.
+    </p>
+  </div>
+</section>
 
-  <h1 class="text-4xl font-bold mb-4">Operating Systems</h1>
-  <p class="text-slate-400 mb-10">Most frequently asked OS interview concepts.</p>
+<!-- ================= CONTENT ================= -->
+<section class="max-w-7xl mx-auto px-6 pb-24 space-y-6">
 
-  <ul class="space-y-4">
-    <li class="p-4 bg-brand-900/30 rounded-xl border border-slate-800">Process vs Thread</li>
-    <li class="p-4 bg-brand-900/30 rounded-xl border border-slate-800">CPU Scheduling Algorithms</li>
-    <li class="p-4 bg-brand-900/30 rounded-xl border border-slate-800">Deadlock & Prevention</li>
-    <li class="p-4 bg-brand-900/30 rounded-xl border border-slate-800">Memory Management & Paging</li>
-    <li class="p-4 bg-brand-900/30 rounded-xl border border-slate-800">Synchronization & Semaphores</li>
-  </ul>
-
+<!-- ====== ACCORDION ITEM ====== -->
+<div class="group bg-panel backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-neon transition">
+  <button onclick="toggle(this)" class="w-full flex justify-between items-center">
+    <h3 class="text-xl font-heading">1. Introduction to Operating Systems</h3>
+    <i data-lucide="chevron-down"></i>
+  </button>
+  <div class="content hidden mt-4 space-y-4 text-slate-300">
+    <p>
+      An Operating System (OS) is system software that acts as an interface between the user and hardware.
+    </p>
+    <div class="bg-black/40 p-4 rounded-lg">
+      <strong>Functions:</strong>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Process Management</li>
+        <li>Memory Management</li>
+        <li>File System</li>
+        <li>Device Management</li>
+        <li>Security & Scheduling</li>
+      </ul>
+    </div>
+    <p class="text-neon">Interview Tip: OS is a resource manager.</p>
+  </div>
 </div>
+
+<!-- ====== PROCESS MANAGEMENT ====== -->
+<div class="group bg-panel backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-neon transition">
+  <button onclick="toggle(this)" class="w-full flex justify-between items-center">
+    <h3 class="text-xl font-heading">2. Process Management</h3>
+    <i data-lucide="chevron-down"></i>
+  </button>
+  <div class="content hidden mt-4 space-y-4">
+    <p>
+      A process is a program in execution. Each process has its own memory and resources.
+    </p>
+
+    <div class="bg-black/40 p-4 rounded-lg">
+      <strong>Process States:</strong>
+      <p class="mt-2">New → Ready → Running → Waiting → Terminated</p>
+    </div>
+
+    <div class="bg-black/40 p-4 rounded-lg">
+      <strong>Context Switch:</strong>
+      <p>Saving the state of a running process and loading another.</p>
+    </div>
+
+    <p class="text-neon">
+      Interview Q: Difference between Process and Thread?
+    </p>
+  </div>
+</div>
+
+<!-- ====== CPU SCHEDULING ====== -->
+<div class="group bg-panel backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-neon transition">
+  <button onclick="toggle(this)" class="w-full flex justify-between items-center">
+    <h3 class="text-xl font-heading">3. CPU Scheduling</h3>
+    <i data-lucide="chevron-down"></i>
+  </button>
+  <div class="content hidden mt-4 space-y-4">
+    <ul class="list-disc ml-6">
+      <li>FCFS</li>
+      <li>SJF (Preemptive & Non-preemptive)</li>
+      <li>Priority Scheduling</li>
+      <li>Round Robin</li>
+    </ul>
+
+    <div class="bg-black/40 p-4 rounded-lg">
+      <strong>Key Metrics:</strong>
+      <p>Turnaround Time, Waiting Time, Response Time</p>
+    </div>
+
+    <p class="text-neon">
+      Interview Tip: SJF gives minimum average waiting time.
+    </p>
+  </div>
+</div>
+
+<!-- ====== DEADLOCK ====== -->
+<div class="group bg-panel backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-neon transition">
+  <button onclick="toggle(this)" class="w-full flex justify-between items-center">
+    <h3 class="text-xl font-heading">4. Deadlocks</h3>
+    <i data-lucide="chevron-down"></i>
+  </button>
+  <div class="content hidden mt-4 space-y-4">
+    <p>A deadlock occurs when processes wait indefinitely for resources.</p>
+
+    <div class="bg-black/40 p-4 rounded-lg">
+      <strong>Coffman Conditions:</strong>
+      <ul class="list-disc ml-6 mt-2">
+        <li>Mutual Exclusion</li>
+        <li>Hold and Wait</li>
+        <li>No Preemption</li>
+        <li>Circular Wait</li>
+      </ul>
+    </div>
+
+    <p class="text-neon">
+      Prevention, Avoidance (Banker’s Algorithm), Detection
+    </p>
+  </div>
+</div>
+
+<!-- ====== MEMORY MANAGEMENT ====== -->
+<div class="group bg-panel backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-neon transition">
+  <button onclick="toggle(this)" class="w-full flex justify-between items-center">
+    <h3 class="text-xl font-heading">5. Memory Management</h3>
+    <i data-lucide="chevron-down"></i>
+  </button>
+  <div class="content hidden mt-4 space-y-4">
+    <ul class="list-disc ml-6">
+      <li>Paging</li>
+      <li>Segmentation</li>
+      <li>Virtual Memory</li>
+      <li>Page Replacement (LRU, FIFO, Optimal)</li>
+    </ul>
+
+    <div class="bg-black/40 p-4 rounded-lg">
+      <strong>Thrashing:</strong>
+      <p>System spends more time paging than executing.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FILE SYSTEM ====== -->
+<div class="group bg-panel backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-neon transition">
+  <button onclick="toggle(this)" class="w-full flex justify-between items-center">
+    <h3 class="text-xl font-heading">6. File Systems</h3>
+    <i data-lucide="chevron-down"></i>
+  </button>
+  <div class="content hidden mt-4 space-y-4">
+    <ul class="list-disc ml-6">
+      <li>File Allocation Methods</li>
+      <li>Directory Structure</li>
+      <li>Inodes</li>
+      <li>Journaling</li>
+    </ul>
+
+    <p class="text-neon">
+      Interview Tip: Explain Inode structure clearly.
+    </p>
+  </div>
+</div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+  <div class="bg-panel border border-neon/30 rounded-xl p-10 text-center hover:scale-[1.02] transition">
+    <h3 class="text-3xl font-heading font-bold">Want Interview Notes + PDFs?</h3>
+    <p class="mt-3 text-slate-400">
+      Get OS, CN, DBMS, OOPS, SQL — structured & premium.
+    </p>
+    <a href="../premium-vault.html" class="inline-block mt-6 px-8 py-3 bg-neon text-black font-semibold rounded-lg hover:scale-110 transition">
+      Unlock Premium Vault
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-panel border-t border-white/10 py-6 text-center text-sm text-slate-400">
+  © 2025 CodeStudio • Built for serious engineers
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+
+  function toggle(btn) {
+    const content = btn.nextElementSibling;
+    content.classList.toggle('hidden');
+    btn.querySelector('i').classList.toggle('rotate-180');
+  }
+</script>
+
 </body>
 </html>
