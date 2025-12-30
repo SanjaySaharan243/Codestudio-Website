@@ -25,7 +25,7 @@ window.signInWithGoogle = async function () {
     });
 
     // redirect after login
-    window.location.href = "index.html";
+    window.location.href = "pages/index.html";
 
   } catch (error) {
     alert("Google Login Failed");

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>OOPS in C++ | CodeStudio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bg: '#020617',
+        panel: 'rgba(15,23,42,0.6)',
+        neon: '#22d3ee'
+      },
+      fontFamily: {
+        heading: ['Space Grotesk'],
+        body: ['Plus Jakarta Sans']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: #22d3ee; border-radius: 10px; }
+pre { background: rgba(2,6,23,.85); }
+</style>
+</head>
+
+<body class="bg-bg text-slate-200 font-body">
+
+<body class="bg-[#020617] text-slate-200">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-brand-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-brand-400 to-blue-600 flex items-center justify-center text-brand-950 font-bold font-display text-xl group-hover:rotate-12 transition-transform">C</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">Code<span class="text-brand-400">Studio</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../dsa-practice.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Practice</a>
+                    <a href="../dsa-notes.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">DSA Notes</a>
+                    <a href="../core-cs.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Core CS</a>
+                    <a href="../system-design.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">System Design</a>
+                    <a href="../interview-prep.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Interview Preparation</a>
+                    <a href="../resources.html" class="text-sm font-medium text-slate-400 hover:text-brand-400 transition-colors">Resources</a>
+                    <a href="https://cosmofeed.com/vig/686f9aa61f8ef80013f08e66" class="px-5 py-2 rounded-full bg-brand-400 text-brand-950 font-bold text-sm hover:bg-white transition-all btn-neon">
+                        Premium Vault
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-20 relative overflow-hidden">
+<div class="absolute -top-40 -left-40 w-96 h-96 bg-neon/20 blur-3xl rounded-full"></div>
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-4xl md:text-5xl font-heading font-bold">
+Object Oriented Programming in C++
+<span class="block text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text">
+Complete Interview Handbook
+</span>
+</h2>
+<p class="mt-4 max-w-2xl text-slate-400">
+From fundamentals to advanced C++ internals — explained for cracking technical interviews.
+</p>
+</div>
+</section>
+
+<!-- CONTENT -->
+<section class="max-w-7xl mx-auto px-6 pb-24 space-y-6">
+
+<!-- CLASSES -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">Classes, Objects & Access Control</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-4">
+<p>
+A <strong>class</strong> is a user-defined data type that encapsulates data and behavior.  
+An <strong>object</strong> is a runtime instance of a class.
+</p>
+
+<p>
+Access specifiers control visibility:
+</p>
+
+<ul class="list-disc ml-6">
+<li><strong>private</strong> – accessible only inside the class</li>
+<li><strong>protected</strong> – accessible in derived classes</li>
+<li><strong>public</strong> – accessible everywhere</li>
+</ul>
+
+<pre class="p-4 rounded-lg text-sm overflow-x-auto">
+class Student {
+private:
+    int rollNo;
+
+protected:
+    string branch;
+
+public:
+    string name;
+
+    void setRoll(int r) {
+        rollNo = r;
+    }
+
+    int getRoll() {
+        return rollNo;
+    }
+};
+</pre>
+
+<p class="text-neon">
+Interview Insight: Data members should almost always be private.
+</p>
+</div>
+</div>
+
+<!-- CONSTRUCTORS -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">Constructors, Destructors & Initialization</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-4">
+<p>
+A constructor is automatically invoked when an object is created.  
+It initializes the object state.
+</p>
+
+<ul class="list-disc ml-6">
+<li>Default Constructor</li>
+<li>Parameterized Constructor</li>
+<li>Copy Constructor</li>
+</ul>
+
+<pre class="p-4 rounded-lg text-sm overflow-x-auto">
+class Demo {
+    int x;
+public:
+    Demo() { x = 0; }
+    Demo(int val) : x(val) {}
+    Demo(const Demo& d) {
+        x = d.x;
+    }
+    ~Demo() {
+        // resource cleanup
+    }
+};
+</pre>
+
+<p>
+<strong>Member Initializer List</strong> is mandatory for:
+</p>
+<ul class="list-disc ml-6">
+<li>const members</li>
+<li>reference members</li>
+</ul>
+
+<p class="text-neon">
+Interview Insight: Destructors should be virtual in polymorphic base classes.
+</p>
+</div>
+</div>
+
+<!-- PILLARS -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">Four Pillars of OOPS (In Depth)</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-6">
+
+<h4 class="font-semibold text-neon">Encapsulation</h4>
+<p>Bundling data and methods while restricting access.</p>
+
+<h4 class="font-semibold text-neon">Inheritance</h4>
+<p>Deriving new classes from existing ones.</p>
+
+<h4 class="font-semibold text-neon">Polymorphism</h4>
+<p>Ability to take many forms via virtual functions.</p>
+
+<h4 class="font-semibold text-neon">Abstraction</h4>
+<p>Hiding internal implementation details.</p>
+
+<pre class="p-4 rounded-lg text-sm overflow-x-auto">
+class Shape {
+public:
+    virtual double area() = 0; // pure virtual
+};
+
+class Rectangle : public Shape {
+    double l, b;
+public:
+    Rectangle(double l, double b) : l(l), b(b) {}
+    double area() override {
+        return l * b;
+    }
+};
+</pre>
+</div>
+</div>
+
+<!-- POLYMORPHISM -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">Polymorphism & Virtual Functions</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-4">
+<p>
+Compile-time polymorphism → Function overloading  
+Runtime polymorphism → Virtual functions
+</p>
+
+<pre class="p-4 rounded-lg text-sm overflow-x-auto">
+class Base {
+public:
+    virtual void show() {
+        cout << "Base";
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived";
+    }
+};
+</pre>
+
+<p>
+<strong>Covariant Return Types:</strong>  
+Derived class can return a more specific type.
+</p>
+
+<p class="text-neon">
+Interview Insight: Function calls are resolved using vtable at runtime.
+</p>
+</div>
+</div>
+
+<!-- SOLID -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">SOLID Principles (Interview Critical)</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-4">
+<ul class="list-disc ml-6">
+<li><strong>SRP</strong> – One reason to change</li>
+<li><strong>OCP</strong> – Open for extension, closed for modification</li>
+<li><strong>LSP</strong> – Derived classes must be substitutable</li>
+<li><strong>ISP</strong> – Many specific interfaces</li>
+<li><strong>DIP</strong> – Depend on abstractions</li>
+</ul>
+
+<p class="text-neon">
+Interview Insight: SOLID = clean, scalable, testable design.
+</p>
+</div>
+</div>
+
+<!-- ADVANCED -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">Advanced C++ OOPS Concepts</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-4">
+<ul class="list-disc ml-6">
+<li>Function & Operator Overloading</li>
+<li>Type Casting (static, dynamic, const)</li>
+<li>Move Semantics</li>
+<li>Smart Pointers</li>
+<li>Rule of 3 / Rule of 5</li>
+</ul>
+
+<pre class="p-4 rounded-lg text-sm overflow-x-auto">
+unique_ptr<int> p = make_unique<int>(10);
+shared_ptr<int> s1 = make_shared<int>(20);
+shared_ptr<int> s2 = s1;
+</pre>
+
+<p class="text-neon">
+Interview Insight: Move semantics avoid deep copy overhead.
+</p>
+</div>
+</div>
+
+<!-- INTERVIEW -->
+<div class="bg-panel border border-white/10 rounded-xl p-6 hover:border-neon transition">
+<button onclick="toggle(this)" class="w-full flex justify-between items-center">
+<h3 class="text-xl font-heading">Most Asked OOPS Interview Questions</h3>
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="content hidden mt-4 space-y-4">
+<ul class="list-disc ml-6">
+<li>Difference between struct and class</li>
+<li>Why destructor should be virtual?</li>
+<li>Diamond problem and virtual inheritance</li>
+<li>Deep copy vs Shallow copy</li>
+<li>Rule of 5 explanation</li>
+</ul>
+</div>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+<div class="bg-panel border border-neon/30 rounded-xl p-10 text-center hover:scale-[1.02] transition">
+<h3 class="text-3xl font-heading font-bold">Want Printable OOPS PDFs?</h3>
+<p class="mt-3 text-slate-400">
+Get structured notes, diagrams & company-wise questions.
+</p>
+<a href="../premium-vault.html" class="inline-block mt-6 px-8 py-3 bg-neon text-black rounded-lg font-semibold hover:scale-110 transition">
+Unlock Premium Vault
+</a>
+</div>
+</section>
+
+<footer class="bg-panel border-t border-white/10 py-6 text-center text-sm text-slate-400">
+© 2025 CodeStudio • Built for serious engineers
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+function toggle(btn) {
+  const c = btn.nextElementSibling;
+  c.classList.toggle('hidden');
+  btn.querySelector('i').classList.toggle('rotate-180');
+}
+</script>
+
+</body>
+</html>
