@@ -379,18 +379,25 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                      <a href="pages/resources.html"
-                        class="px-8 py-4 rounded-full bg-brand-400 text-brand-950 font-bold
-                              hover:bg-white transition text-center">
-                        Explore Resources
-                      </a>
+                        <button onclick="signInWithGoogle()"
+                        class="mt-6 px-6 py-3 bg-white text-slate-900 font-bold rounded-full
+                              flex items-center gap-3 hover:scale-105 transition">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg"
+                            class="w-5 h-5" />
+                        Continue with Google
+                      </button>
 
-                      <!-- Practice DSA -->
-                      <a href="pages/dsa-practice.html"
-                        class="px-8 py-4 rounded border border-slate-700 text-white font-medium
-                              hover:border-brand-400 hover:text-brand-400 transition text-center">
-                        Practice DSA
-                      </a>
+
+                    <!-- Firebase Init -->
+                    <script type="module" src="assets/js/firebase.js"></script>
+
+                    <!-- Auth Logic -->
+                    <script type="module" src="assets/js/auth.js"></script>
+
+                    <!-- Icons -->
+                    <script>
+                      lucide.createIcons();
+                    </script>
 
 
                     </div>
